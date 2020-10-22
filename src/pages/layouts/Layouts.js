@@ -3,7 +3,7 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import styled from 'styled-components';
 
 // Components
-// import Header from '../../components/header/Header';
+import Header from '../../components/header/Header';
 
 // Pages
 import Home from '../home/Home';
@@ -37,10 +37,10 @@ class Layouts extends Component {
   render() {
     return (
       <Fragment>
-        {/* <Header /> */}
-        <Container>
+        <Header />
+        <Fragment>
           {this.renderRoutes()}
-        </Container>
+        </Fragment>
       </Fragment>
     );
   }
