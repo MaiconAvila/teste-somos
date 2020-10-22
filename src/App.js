@@ -1,13 +1,21 @@
 import React from 'react';
+import { BrowserRouter, Route } from 'react-router-dom';
+
 import './App.css';
 
-// Components
-import Home from './pages/home';
+// Layouts
+import Layouts from './pages/layouts/Layouts';
 
 function App() {
   return (
     <div className="App">
-      <Home />
+      <BrowserRouter>
+        <Route
+          component={(props) => (
+            <Layouts {...props} />
+          )}
+        />
+      </BrowserRouter>
     </div>
   );
 }
