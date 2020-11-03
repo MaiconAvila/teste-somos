@@ -1,8 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useMutation } from 'react-query';
 import styled from 'styled-components';
 
 // Assets
 import logo from '../../assets/images/logo_SOMOS.png';
+
+// Components
+import InputSearch from '../inputs/InputSearch';
+
+// API
+import { fetchCoordinates } from '../../dataflow/RequestApi';
 
 const Container = styled.header`
   width: 100;
@@ -26,10 +33,30 @@ const ButtonsContainer = styled.div`
  }
 `;
 
-const Header = () => {
+const Header = (props) => {
+  const [listAddress, setListAddress] = useState([]);
+  const [fetchResponses] = useMutation(fetchCoordinates, {
+    onSuccess: response => {
+      console.log(response);
+      setListAddress(response.results);
+    }
+  });
+  const getCooordenates = (e) => {
+    const { value } = e.target;
+    fetchResponses(value);
+  };
+  const saveCoordinates = (info) => {
+    setListAddress([]);
+    props.saveCoordinates(info);
+  }
   return (
     <Container>
       <ImgLogo src={logo} alt={'Logotipo'} />
+      <InputSearch
+        getParameter={getCooordenates}
+        saveCoordinates={saveCoordinates}
+        listAddress={listAddress}
+      />
       <ButtonsContainer>
         <button>Cadastre-se aqui</button>
       </ButtonsContainer>
