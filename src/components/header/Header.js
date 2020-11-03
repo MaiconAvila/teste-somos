@@ -44,14 +44,17 @@ const Header = (props) => {
   const getCooordenates = (e) => {
     const { value } = e.target;
     fetchResponses(value);
+  };
+  const saveCoordinates = (info) => {
+    setListAddress([]);
+    props.saveCoordinates(info);
   }
-
   return (
     <Container>
       <ImgLogo src={logo} alt={'Logotipo'} />
       <InputSearch
         getParameter={getCooordenates}
-        saveCoordinates={props.saveCoordinates}
+        saveCoordinates={saveCoordinates}
         listAddress={listAddress}
       />
       <ButtonsContainer>
