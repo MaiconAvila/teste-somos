@@ -14,6 +14,34 @@ const Container = styled.div`
 `;
 
 class Layouts extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      location: {
+        lat: -14.235004, lng: -51.92528
+      },
+      bounds: {
+        ne: {
+          lat: 5.2717863, lng: -28.650543
+        },
+        sw: {
+          lat: -34.0891, lng: -73.9828169
+        }
+      }
+    }
+  }
+
+  saveCoordinates = (info) => {
+    const bound = {
+      ne: {...info.geometry.bounds.northeast},
+      sw: {...info.geometry.bounds.southwest}
+    }
+    this.setState({
+      location: {...info.geometry.location},
+      bounds: bound,
+    })
+  };
+
   renderRoutes = () => {
     return (
       <Switch>
@@ -37,7 +65,9 @@ class Layouts extends Component {
   render() {
     return (
       <Fragment>
-        <Header />
+        <Header
+          saveCoordinates={this.saveCoordinates}
+        />
         <Fragment>
           {this.renderRoutes()}
         </Fragment>
