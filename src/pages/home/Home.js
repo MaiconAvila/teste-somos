@@ -1,5 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
+
+// Components
+import Infographic from '../infographic/Infographic';
 
 const Container = styled.div`
   width: 100%;
@@ -15,12 +18,9 @@ const Container = styled.div`
 `;
 
 function Home() {
-  const [title] = useState('Bem vindo a Rede de Benefícios');
-
   return (
     <Container>
-      {/* Trocar o h1 pelos componentes */}
-      <h1>{title}</h1>
+      <Infographic />
     </Container>
   );
 }
