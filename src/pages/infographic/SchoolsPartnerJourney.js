@@ -2,6 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import colors from './colors';
 
+// icons
+import IconPartner from '../../assets/icons/IconPartner.svg';
+
 const ScreenElementarySchool = styled.div`
   display: flex;
   flex-direction: column;
@@ -138,7 +141,7 @@ const SchoolsPartnerJourney = (props) => {
     <ScreenElementarySchool>
       <TitleElementarySchool>Escola Ataufo</TitleElementarySchool>
       <ContainerElementarySchool>
-        <CircleSchool><span></span></CircleSchool>
+        <CircleSchool><img src={IconPartner}/></CircleSchool>
         <ConnectionInterested></ConnectionInterested>
         <ConnectionRegistered></ConnectionRegistered>
         <CircleFamilyInterested>

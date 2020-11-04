@@ -10,6 +10,11 @@ import FamilyJourney from './FamilyJourney';
 import SchoolsPartnerJourney from './SchoolsPartnerJourney';
 import KindergartenJourney from './KindergartenJourney';
 
+// Icons
+import IconHome from '../../assets/icons/IconHome.svg';
+import IconConnection from '../../assets/icons/IconConnection.svg';
+import IconCards from '../../assets/icons/IconCards.svg';
+
 const Container = styled.div`
   display: flex;
   align-items: center;
@@ -30,6 +35,10 @@ const ContainerButtons = styled.div`
 const ButtonHome = styled.span`
   width: 35px;
   height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 2%;
   border: none;
   color: ${colors.white};
   background: ${colors.gray};
@@ -45,6 +54,10 @@ const ButtonHome = styled.span`
 const ButtonConnection = styled.span`
   width: 35px;
   height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 2%;
   border-top: 1px solid ${colors.white};
   border-bottom: 1px solid ${colors.white};
   color: ${colors.white};
@@ -57,9 +70,13 @@ const ButtonConnection = styled.span`
   }
 `;
 
-const ButtonSearch = styled.span`
+const ButtonCards = styled.span`
   width: 35px;
   height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 2%;
   border: none;
   color: ${colors.white};
   background: ${colors.gray};
@@ -277,7 +294,7 @@ const SpanFamily = styled.span`
 const Infographic = () => {
   const [amountSchools] = useState(15);
   const [amountFamily] = useState(50);
-  const [logged] = useState('isChildren');
+  const [logged] = useState('isFamily');
   // logged: isInitial - isFamily - isElementary - isChildren
   const [elementarySchool] = useState(1)
   const [familyInterested] = useState(3)
@@ -472,9 +489,9 @@ const Infographic = () => {
   return (
     <Container>
       <ContainerButtons>
-        <ButtonHome />
-        <ButtonConnection />
-        <ButtonSearch />
+        <ButtonHome><img src={IconHome}/></ButtonHome>
+        <ButtonConnection><img src={IconConnection}/></ButtonConnection>
+        <ButtonCards><img src={IconCards}/></ButtonCards>
       </ContainerButtons>
       <ContainerInfographic>
         <AllPartsInfographic width={width}>

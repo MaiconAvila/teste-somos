@@ -6,8 +6,8 @@ import Infographic from '../infographic/Infographic';
 
 const Container = styled.div`
   width: 100%;
-  height: calc(100vh - 75px);
-  padding: 0 70px;
+  min-height: calc(100vh - 75px);
+  /* padding: 0 70px; */
   background: #D3D3D3;
 
   h1 {

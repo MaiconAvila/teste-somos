@@ -2,6 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import colors from './colors';
 
+// icons
+import Iconkindergarten from '../../assets/icons/IconKindergarten.svg';
+
 const ScreenElementarySchool = styled.div`
   display: flex;
   flex-direction: column;
@@ -138,7 +141,7 @@ const KindergartenJourney = (props) => {
     <ScreenElementarySchool>
       <TitleElementarySchool color={props.logged}>Escolinha Mariana</TitleElementarySchool>
       <ContainerElementarySchool>
-        <CircleSchool border={props.logged}><span></span></CircleSchool>
+        <CircleSchool border={props.logged}><img src={Iconkindergarten} /></CircleSchool>
         <ConnectionInterested></ConnectionInterested>
         <ConnectionRegistered></ConnectionRegistered>
         <CircleFamilyInterested>

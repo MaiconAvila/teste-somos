@@ -5,6 +5,10 @@ import colors from './colors';
 // Components
 import CircleSchoolsPartner from './CircleSchoolsPartner';
 
+// icons
+import IconFamily from '../../assets/icons/IconFamily.svg';
+import IconKindergarten from '../../assets/icons/IconKindergarten.svg';
+
 const AllPartsInfographic = styled.div`
   display: flex;
   justify-content: space-between;
@@ -42,8 +46,8 @@ const IconSchoolOrigin = styled.div`
   width: 100px;
   height: 100px;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
   margin-top: 5rem;
   border: 4px solid ${colors.primaryColorYellow};
   background: ${colors.grayQuaternary};
@@ -96,6 +100,9 @@ const Family = styled.div`
     height: 70px;
     right: 1.5rem;
   }
+`;
+const FamilyIcon = styled.img`
+  
 `;
 const ConnectionDiagonal = styled.div`
   width: 250px;
@@ -188,14 +195,14 @@ const FamilyJourney = (props) => {
       <ContainerFamily>
         <TitleContainerFamily>Família Silva</TitleContainerFamily>
         <SchoolOrigin>
-          <IconSchoolOrigin></IconSchoolOrigin>
+          <IconSchoolOrigin><img src={IconKindergarten} /></IconSchoolOrigin>
           <TextSchoolOrigin>
             <TitleSchool>Escola Infantil</TitleSchool>
             <ParagraphSchool>Origem</ParagraphSchool>
           </TextSchoolOrigin>
         </SchoolOrigin>
         <Family>
-          <span></span>
+          <FamilyIcon src={IconFamily} />
         </Family> 
         <ConnectionDiagonal></ConnectionDiagonal>
         <ConnectionHorizontal></ConnectionHorizontal>
