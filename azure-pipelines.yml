@@ -19,11 +19,11 @@ steps:
 
 - task: CopyFiles@2
   inputs:
-    SourceFolder: 'dist'
+    SourceFolder: 'build'
     Contents: '**'
-    TargetFolder: '$(Build.ArtifactStagingDirectory)/dist'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)/build'
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)/dist'
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)/build'
     ArtifactName: 'site'
     publishLocation: 'Container'
