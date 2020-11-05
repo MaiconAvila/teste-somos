@@ -3,8 +3,6 @@ import styled from "styled-components";
 import colors from './colors';
 
 // Components
-import CircleSchoolsPartner from './CircleSchoolsPartner';
-import FamilyCircle from './FamilyCircle';
 import InitialJourney from './InitialJourney';
 import FamilyJourney from './FamilyJourney';
 import SchoolsPartnerJourney from './SchoolsPartnerJourney';
@@ -16,12 +14,19 @@ import IconConnection from '../../assets/icons/IconConnection.svg';
 import IconCards from '../../assets/icons/IconCards.svg';
 
 const Container = styled.div`
+  width: 60%;
+  height: 100%;
+  background: #D3D3D3;
   display: flex;
   align-items: center;
   flex-direction: column;
   position: relative;
-`;
 
+  @media (max-width: 425px) {
+    width: 100%;
+    height: calc(100vh - 75px);
+  }
+`;
 const ContainerButtons = styled.div`
   display: flex;
   flex-direction: column;
@@ -31,7 +36,6 @@ const ContainerButtons = styled.div`
   box-shadow: 0px 3px 6px #00000029;
   border-radius: 6px;
 `;
-
 const ButtonHome = styled.span`
   width: 35px;
   height: 50px;
@@ -50,7 +54,6 @@ const ButtonHome = styled.span`
     height: 40px;
   }
 `;
-
 const ButtonConnection = styled.span`
   width: 35px;
   height: 50px;
@@ -69,7 +72,6 @@ const ButtonConnection = styled.span`
     height: 40px;
   }
 `;
-
 const ButtonCards = styled.span`
   width: 35px;
   height: 50px;
@@ -88,15 +90,20 @@ const ButtonCards = styled.span`
     height: 40px;
   }
 `;
-
 const ContainerInfographic = styled.div`
+  width: 100%;
+  max-width: 700px;
+  height: 100%;
+  padding: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  min-height: 100vh;
-`;
 
+  @media (max-width: 425px) {
+    max-width: none;
+  }
+`;
 const AllPartsInfographic = styled.div`
   display: flex;
   justify-content: space-between;
@@ -120,7 +127,6 @@ const TotalDataInfographic = styled.div`
   margin-top: 1rem;
   text-transform: uppercase;
 `;
-
 const Data = styled.div`
   display: flex;
   flex-direction: column;
@@ -129,27 +135,19 @@ const Data = styled.div`
   text-align: center;
   width: 50%;
 `;
-
 const ParagraphData = styled.p`
   color: ${colors.graySecondary};
 `;
-
 const FirstData = styled.span`
   font-size: 36px;
   font-weight: bold;
   color: ${props => props.color};
 `;
-
 const SecondData = styled.span`
   font-size: 36px;
   font-weight: bold;
   color: ${props => props.color};
 `;
-
-// isFamily
-
-// is Schools
-
 const ScreenElementarySchool = styled.div`
   display: flex;
   flex-direction: column;
@@ -157,20 +155,17 @@ const ScreenElementarySchool = styled.div`
   width: 500px;
   margin-bottom: 8rem;
 `;
-
 const TitleElementarySchool = styled.h2`
   text-align: center;
   color: ${props => props.color === 'isChildren' ? `${colors.primaryColorYellow}` : `${colors.primaryColorPink}`};
   font-size: 20px;
   font-weight: SemiBold;
 `;
-
 const ContainerElementarySchool = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
 `;
-
 const CircleSchool = styled.div`
   width: 100px;
   height: 100px;
@@ -193,136 +188,18 @@ const CircleSchool = styled.div`
   }
 `;
 
-const ConnectionInterested = styled.div`
-  width: 250px;
-  height: 15px;
-  background: ${colors.grayQuaternary};
-  position: absolute;
-  top: 13rem;
-  right: 15rem;
-  transform: rotate(-49deg);
-
-  @media (max-width: 425px) {
-    width: 180px;
-    top: 7.5rem;
-    right: 7rem;
-  }
-`;
-
-const ConnectionRegistered = styled.div`
-  width: 250px;
-  height: 15px;
-  background: ${colors.grayQuaternary};
-  position: absolute;
-  top: 13rem;
-  right: 1rem;
-  transform: rotate(49deg);
-
-  @media (max-width: 425px) {
-    width: 180px;
-    top: 9rem;
-    right: 1rem;
-  }
-`;
-
-const CircleFamilyInterested = styled.div`
-  width: 150px;
-  height: 150px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  position: relative;
-  top: 12.4rem;
-  left: -10rem;
-  background: ${colors.grayQuaternary};
-  border-radius: 50%;
-  z-index: 2;
-
-  @media (max-width: 425px) {
-    width: 130px;
-    height: 130px;
-    top: 9.3rem;
-    left: -5.9rem;
-  }
-`;
-
-const CircleFamilyRegistered = styled.div`
-  width: 150px;
-  height: 150px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  position: relative;
-  top: 3rem;
-  left: 9rem;
-  background: ${colors.grayQuaternary};
-  border-radius: 50%;
-  z-index: 2;
-
-  @media (max-width: 425px) {
-    width: 130px;
-    height: 130px;
-    left: 6rem;
-    top: 1.1rem;
-  }
-`;
-
-const NumberFamily = styled.h3`
-  color: ${colors.primaryColorViolet};
-  font-size: 50px;
-  font-weight: Bold;
-
-  @media (max-width: 425px) {
-    font-size: 40px;
-  }
-`;
-
-const ParagraphFamily = styled.p`
-  color: ${colors.primaryColorViolet};
-  font-size: 14px;
-  font-weight: Medium;
-`;
-
-const SpanFamily = styled.span`
-  color: ${colors.primaryColorViolet};
-  font-size: 10px;
-  font-weight: Medium;
-`;
-
 const Infographic = () => {
-  const [amountSchools] = useState(15);
-  const [amountFamily] = useState(50);
-  const [logged] = useState('isFamily');
+  const [logged] = useState('isElementary');
   // logged: isInitial - isFamily - isElementary - isChildren
-  const [elementarySchool] = useState(1)
-  const [familyInterested] = useState(3)
-  const [familyRegistered] = useState(2)
-  const [childrenOrigin] = useState(6)
-  const [childrenActive] = useState(2)
-  const [width, setWidth] = useState('500px');
+  const [amountFamily] = useState(10);
+  const [amountSchools] = useState(3);
+  const [elementarySchool] = useState(1);
+  const [familyInterested] = useState(3);
+  const [familyRegistered] = useState(2);
+  const [childrenOrigin] = useState(6);
+  const [childrenActive] = useState(2);
 
-  useEffect(() => {
-    if(logged === 'isFamily' && amountSchools > 13) {
-      console.log('600px')
-      setWidth('600px')
-    } else {
-      console.log('500px')
-      setWidth('500px')
-    }
-  }, [logged, amountSchools]);
-
-  // logged === 'isFamily' && amountSchools > 13 && '630px' || logged === 'isInitial' && '500px'
-
-  // switch (logged) {
-  //   case 'isFamily' && amountSchools > 13:
-  //     return setWidth('600px')
-  //   case 'isInitial':
-  //     return setWidth('500px')
-  // }
-
-  const list = []
+  const list = [];
 
   for (let i = 1; i <= amountSchools; i++) {
     list.push({
@@ -346,12 +223,12 @@ const Infographic = () => {
   });
 
   const sizeCircle = (info) => {
-    const size = info * 16;
-    if (size > 250) {
-      return '250px'
+    const size = info * 15;
+    if (size > 265) {
+      return '265px'
     }
-    if (size < 140) {
-      return '140px'
+    if (size < 180) {
+      return '180px'
     }
     return `${size}px`
   };
@@ -494,9 +371,9 @@ const Infographic = () => {
         <ButtonCards><img src={IconCards}/></ButtonCards>
       </ContainerButtons>
       <ContainerInfographic>
-        <AllPartsInfographic width={width}>
+        {/* <AllPartsInfographic width={width}> */}
           {renderDynamicInfographic()}
-        </AllPartsInfographic>
+        {/* </AllPartsInfographic> */}
         {renderOverview()}
       </ContainerInfographic>
     </Container>

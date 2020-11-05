@@ -6,11 +6,11 @@ import colors from './colors';
 import Iconkindergarten from '../../assets/icons/IconKindergarten.svg';
 
 const ScreenElementarySchool = styled.div`
+  width: 100%;
+  margin-top: 2.4rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 500px;
-  margin-bottom: 8rem;
 `;
 const TitleElementarySchool = styled.h2`
   text-align: center;
@@ -19,6 +19,7 @@ const TitleElementarySchool = styled.h2`
   font-weight: SemiBold;
 `;
 const ContainerElementarySchool = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -30,18 +31,20 @@ const CircleSchool = styled.div`
   justify-content: center;
   align-items: center;
   position: absolute;
-  top: 0;
-  right: 12.5rem;
-  margin-top: 3rem;
+  top: 6rem;
   border: ${props => props.border === 'isChildren' ? `4px solid ${colors.primaryColorYellow}` : `4px solid ${colors.primaryColorPink}`};
   background: ${colors.white};
   border-radius: 50%;
   z-index: 2;
 
+  img {
+    width: 60%;
+  }
+
   @media (max-width: 425px) {
     width: 80px;
     height: 80px;
-    right: 7.7rem;
+    /* right: 7.7rem; */
   }
 `;
 const ConnectionInterested = styled.div`
@@ -49,14 +52,14 @@ const ConnectionInterested = styled.div`
   height: 15px;
   background: ${colors.grayQuaternary};
   position: absolute;
-  top: 13rem;
-  right: 15rem;
+  top: 15rem;
+  left: 15vw;
   transform: rotate(-49deg);
 
   @media (max-width: 425px) {
     width: 180px;
-    top: 7.5rem;
-    right: 7rem;
+    top: 30vh;
+    /* right: 7rem; */
   }
 `;
 const ConnectionRegistered = styled.div`
@@ -64,14 +67,14 @@ const ConnectionRegistered = styled.div`
   height: 15px;
   background: ${colors.grayQuaternary};
   position: absolute;
-  top: 13rem;
-  right: 1rem;
+  top: 15rem;
+  right: 15vw;
   transform: rotate(49deg);
 
   @media (max-width: 425px) {
     width: 180px;
-    top: 9rem;
-    right: 1rem;
+    top: 30vh;
+    /* right: 1rem; */
   }
 `;
 const CircleFamilyInterested = styled.div`
@@ -81,9 +84,9 @@ const CircleFamilyInterested = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  position: relative;
-  top: 12.4rem;
-  left: -10rem;
+  position: absolute;
+  top: 18rem;
+  left: 13rem;
   background: ${colors.grayQuaternary};
   border-radius: 50%;
   z-index: 2;
@@ -91,8 +94,8 @@ const CircleFamilyInterested = styled.div`
   @media (max-width: 425px) {
     width: 130px;
     height: 130px;
-    top: 9.3rem;
-    left: -5.9rem;
+    top: 40vh;
+    /* left: -5.9rem; */
   }
 `;
 const CircleFamilyRegistered = styled.div`
@@ -102,9 +105,9 @@ const CircleFamilyRegistered = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  position: relative;
-  top: 3rem;
-  left: 9rem;
+  position: absolute;
+  top: 18rem;
+  right: 13rem;
   background: ${colors.grayQuaternary};
   border-radius: 50%;
   z-index: 2;
@@ -112,8 +115,8 @@ const CircleFamilyRegistered = styled.div`
   @media (max-width: 425px) {
     width: 130px;
     height: 130px;
-    left: 6rem;
-    top: 1.1rem;
+    top: 40vh;
+    /* top: 1.1rem; */
   }
 `;
 const NumberFamily = styled.h3`
@@ -139,16 +142,24 @@ const SpanFamily = styled.span`
 const KindergartenJourney = (props) => {
   return (
     <ScreenElementarySchool>
+
       <TitleElementarySchool color={props.logged}>Escolinha Mariana</TitleElementarySchool>
+
       <ContainerElementarySchool>
-        <CircleSchool border={props.logged}><img src={Iconkindergarten} /></CircleSchool>
-        <ConnectionInterested></ConnectionInterested>
-        <ConnectionRegistered></ConnectionRegistered>
+        <CircleSchool border={props.logged}>
+          <img src={Iconkindergarten} />
+        </CircleSchool>
+        
+        <ConnectionInterested />
+
         <CircleFamilyInterested>
           <NumberFamily>{props.childrenOrigin}</NumberFamily>
           <ParagraphFamily>Famílias</ParagraphFamily>
           <SpanFamily>Origem</SpanFamily>
         </CircleFamilyInterested>
+
+        <ConnectionRegistered />
+
         <CircleFamilyRegistered>
           <NumberFamily>{props.childrenActive}</NumberFamily>
           <ParagraphFamily>Famílias</ParagraphFamily>

@@ -1,74 +1,68 @@
 import React from 'react';
 import styled from 'styled-components';
-import colors from './colors';
+import colors from '../colors';
 
 const ContainerFamilyCircle = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  position: relative;
   width: ${props => props.sizeCircle};
   height: ${props => props.sizeCircle};
   border-radius: 50%;
   margin-top: 2rem;
   background-color: ${colors.grayTertiary};
+  position: relative;
   z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   @media (max-width: 425px) {
-    width: 160px;
-    height: 160px;
+    width: 40vw;
+    height: 40vw;
     margin-top: 0;
     left: 1.5rem;
     bottom: 2.5rem;
   }
-`;
-const DataFamilyCircle = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  width: 118px;
-  height: 118px;
-  position: absolute;
-  z-index: 2;
-  background-color: #ffffff95;
-  box-shadow: 0px 2px 4px #00000029;
-  border-radius: 50%;
 `;
 const WhiteCircle = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  width: 114px;
+  height: 114px;
+  position: absolute;
+  z-index: 2;
+  background-color: #ffffffBF;
+  box-shadow: 0px 2px 4px #00000029;
+  border-radius: 50%;
+
+  @media (max-width: 425px) {
+    width: 25vw;
+    height: 25vw;
+  }
+`;
+const DataFamilyCircle = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
 `;
 const TitleFamilyCircle = styled.h3`
   color: ${colors.primaryColorViolet};
   font-size: 48px;
   font-weight: bold;
+
+  @media (max-width: 425px) {
+    font-size: 30px;
+  }
 `;
 const ParagraphFamilyCircle = styled.p`
   color: ${colors.primaryColorViolet};
   font-size: 15px;
-  font-weight: light;
+  font-weight: 300;
   text-transform: uppercase;
-`;
-const ConnectingLink = styled.div`
-  width: 400px;
-  height: 15px;
-  position: absolute;
-  margin-top: 11rem;
-  margin-left: 4rem;
-  transform: rotate(22deg);
-  background-color: ${colors.grayTertiary};
 
   @media (max-width: 425px) {
-    width: 180px;
-    height: 15px;
-    margin-left: 0;
-    bottom: 9rem;
-    right: 2rem;
-    transform: rotate(53deg);
+    font-size: 12px;
   }
 `;
 const InsideFamilyCircle = styled.div`
@@ -113,20 +107,17 @@ const FamilyCircle = (props) => {
     )
   };
   return (
-    <>
-      <ContainerFamilyCircle 
-        sizeCircle={props.sizeCircle(props.amountFamily)}
-      >
-        {renderFamilyList()}
+    <ContainerFamilyCircle 
+      sizeCircle={props.sizeCircle(props.amountFamily)}
+    >
+      {renderFamilyList()}
+      <WhiteCircle>
         <DataFamilyCircle>
-          <WhiteCircle>
-            <TitleFamilyCircle>{props.amountFamily}</TitleFamilyCircle>
-            <ParagraphFamilyCircle>Famílias</ParagraphFamilyCircle>
-          </WhiteCircle>
+          <TitleFamilyCircle>{props.amountFamily}</TitleFamilyCircle>
+          <ParagraphFamilyCircle>Famílias</ParagraphFamilyCircle>
         </DataFamilyCircle>
-      </ContainerFamilyCircle>
-      <ConnectingLink />
-    </>    
+      </WhiteCircle>
+    </ContainerFamilyCircle>
   )
 };
 
