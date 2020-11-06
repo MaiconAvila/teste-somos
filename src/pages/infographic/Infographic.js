@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import colors from './colors';
 
@@ -15,6 +15,7 @@ import IconCards from '../../assets/icons/IconCards.svg';
 
 const Container = styled.div`
   width: 60%;
+  min-width: 650px;
   height: 100%;
   background: #D3D3D3;
   display: flex;
@@ -22,8 +23,9 @@ const Container = styled.div`
   flex-direction: column;
   position: relative;
 
-  @media (max-width: 425px) {
+  @media (max-width: 1100px) {
     width: 100%;
+    min-width: auto;
     height: calc(100vh - 75px);
   }
 `;
@@ -104,17 +106,6 @@ const ContainerInfographic = styled.div`
     max-width: none;
   }
 `;
-const AllPartsInfographic = styled.div`
-  display: flex;
-  justify-content: space-between;
-  position: relative;
-  margin-top: 2.4rem;
-  width: ${props => props.width};
-
-  @media (max-width: 425px) {
-    width: 330px;
-  }
-`;
 const TotalDataInfographic = styled.div`
   display: flex;
   flex-direction: row;
@@ -148,48 +139,9 @@ const SecondData = styled.span`
   font-weight: bold;
   color: ${props => props.color};
 `;
-const ScreenElementarySchool = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 500px;
-  margin-bottom: 8rem;
-`;
-const TitleElementarySchool = styled.h2`
-  text-align: center;
-  color: ${props => props.color === 'isChildren' ? `${colors.primaryColorYellow}` : `${colors.primaryColorPink}`};
-  font-size: 20px;
-  font-weight: SemiBold;
-`;
-const ContainerElementarySchool = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-const CircleSchool = styled.div`
-  width: 100px;
-  height: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  top: 0;
-  right: 12.5rem;
-  margin-top: 3rem;
-  border: ${props => props.border === 'isChildren' ? `4px solid ${colors.primaryColorYellow}` : `4px solid ${colors.primaryColorPink}`};
-  background: ${colors.white};
-  border-radius: 50%;
-  z-index: 2;
-
-  @media (max-width: 425px) {
-    width: 80px;
-    height: 80px;
-    right: 7.7rem;
-  }
-`;
 
 const Infographic = () => {
-  const [logged] = useState('isElementary');
+  const [logged] = useState('isChildren');
   // logged: isInitial - isFamily - isElementary - isChildren
   const [amountFamily] = useState(10);
   const [amountSchools] = useState(3);
@@ -235,16 +187,6 @@ const Infographic = () => {
 
   const renderDynamicInfographic = () => {
     switch(logged) {
-      case 'isInitial':
-        return (
-          <InitialJourney
-            logged={logged}
-            amountFamily={amountFamily}
-            amountSchools={amountSchools}
-            list={list}
-            sizeCircle={sizeCircle}
-          />
-        )
       case 'isFamily':
         return (
           <FamilyJourney
@@ -270,6 +212,16 @@ const Infographic = () => {
             childrenActive={childrenActive}
           />
         )
+      default:
+        return (
+          <InitialJourney
+            logged={logged}
+            amountFamily={amountFamily}
+            amountSchools={amountSchools}
+            list={list}
+            sizeCircle={sizeCircle}
+          />
+        )
     }
   }
 
@@ -278,23 +230,25 @@ const Infographic = () => {
       case 'isInitial':
         return 'famílias'
       case 'isFamily':
-        return 'escolas fundamentais ativas e selecionadas'
+        return 'escolas fundamentais ativas e selecionadas';
       case 'isElementary':
-        return 'escolas infantis'
+        return 'escolas infantis';
       case 'isChildren':
-        return 'famílias ativas'
+        return 'famílias ativas';
+      default:
+        return null;
     }
   }
 
   const colorFirstData = () => {
     switch (logged) {
-      case 'isInitial':
-        return `${colors.primaryColorViolet}`
       case 'isFamily':
         return `${colors.primaryColorPink}`
       case 'isElementary':
         return `${colors.primaryColorYellow}`
       case 'isChildren':
+        return `${colors.primaryColorViolet}`
+      default:
         return `${colors.primaryColorViolet}`
     }
   }
@@ -309,6 +263,8 @@ const Infographic = () => {
         return amountFamily
       case 'isChildren':
         return childrenActive
+      default:
+        return null;
     }
   }
 
@@ -322,19 +278,21 @@ const Infographic = () => {
         return 'Famílias'
       case 'isChildren':
         return 'Seus alunos'
+      default:
+        return null;
     }
   }
 
   const colorSecondData = () => {
     switch (logged) {
-      case 'isInitial':
-        return `${colors.primaryColorPink}`
       case 'isFamily':
         return `${colors.primaryColorPink}`
       case 'isElementary':
         return `${colors.primaryColorViolet}`
       case 'isChildren':
         return `${colors.primaryColorViolet}`
+      default:
+        return `${colors.primaryColorPink}`
     }
   }
 
@@ -357,7 +315,18 @@ const Infographic = () => {
           <SecondData
             color={colorSecondData}
           >
-          {logged === 'isElementary' && familyInterested + familyRegistered || logged === 'isChildren' && '0,3%' || logged === 'isInitial' && amountSchools || 'isFamily' && amountSchools}</SecondData>
+          {
+            (
+              logged === 'isElementary' && familyInterested + familyRegistered
+            ) || (
+              logged === 'isChildren' && '0,3%'
+            ) || (
+              logged === 'isInitial' && amountSchools
+            ) || (
+              'isFamily' && amountSchools
+            )
+          }
+          </SecondData>
         </Data>
       </TotalDataInfographic>
     )
@@ -366,9 +335,15 @@ const Infographic = () => {
   return (
     <Container>
       <ContainerButtons>
-        <ButtonHome><img src={IconHome}/></ButtonHome>
-        <ButtonConnection><img src={IconConnection}/></ButtonConnection>
-        <ButtonCards><img src={IconCards}/></ButtonCards>
+        <ButtonHome>
+          <img src={IconHome} alt='Link no menu para home' />
+        </ButtonHome>
+        <ButtonConnection>
+          <img src={IconConnection} alt='Link no menu para infográfico' />
+        </ButtonConnection>
+        <ButtonCards>
+          <img src={IconCards} alt='Link no menu para cards das escolas' />
+        </ButtonCards>
       </ContainerButtons>
       <ContainerInfographic>
         {/* <AllPartsInfographic width={width}> */}

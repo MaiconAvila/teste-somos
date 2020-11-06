@@ -8,12 +8,16 @@ const Container = styled.div`
   width: 100%;
   height: calc(100vh - 75px);
   display: flex;
+  flex-wrap: wrap;
 
-  @media (max-width: 425px) {
+  @media (max-width: 1100px) {
     height: auto;
     flex-direction: column;
     overflow-x: scroll;
   }
+
+  /* @media (max-width: 425px) {
+  } */
 `;
 
 const Map = styled.div`
@@ -22,7 +26,7 @@ const Map = styled.div`
   background: #F7F7F7;
   border-left: solid 1px #CFD2D9;
   
-  @media (max-width: 425px) {
+  @media (max-width: 1100px) {
     width: 100%;
     height: calc(100vh - 75px);
   }

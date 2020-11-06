@@ -229,7 +229,7 @@ const FamilyJourney = (props) => {
 
       <SchoolOrigin>
         <IconSchoolOrigin>
-          <img src={IconKindergarten} />
+          <img src={IconKindergarten} alt='Escola de origem' />
         </IconSchoolOrigin>
         <TextSchoolOrigin>
           <TitleSchool>Escola Infantil</TitleSchool>
