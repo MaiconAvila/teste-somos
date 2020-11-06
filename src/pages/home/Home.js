@@ -5,18 +5,21 @@ import Map from './Map';
 
 import loaderMap from '../../assets/images/map_loading.gif';
 
+// Components
+import Infographic from '../infographic/Infographic';
+
 const Container = styled.div`
   width: 100%;
   height: calc(100vh - 75px);
   display: flex;
-`;
+  flex-wrap: wrap;
 
-const Infographic = styled.div`
-  width: 60%;
-  height: 100%;
-  background: #D3D3D3;
+  @media (max-width: 1100px) {
+    height: auto;
+    flex-direction: column;
+    overflow-x: scroll;
+  }
 `;
-
 const Loader = styled.div`
   width: 40%;
   height: 100%;
@@ -26,16 +29,13 @@ const Loader = styled.div`
   justify-content: center;
   flex-direction: column;
 `;
-
 const ImageLoader = styled.img`
   width: 50%;
 `;
-
 const TextLoader = styled.p`
   font: 20px bold;
   color: #E03D72;
 `;
-
 function Home(props) {
   const [sizeMap, setSizeMap] = useState({
     width: (window.innerWidth / 100) * 40,
