@@ -12,9 +12,9 @@ import iconPin from '../../assets/images/pin_pink.svg';
 // Styles
 const Container = styled.div`
   width: 40%;
-  height: 100%;
+  min-height: calc(100vh - 75px);
   margin-left: auto;
-  border-left: solid 1px;
+  border-left: .5px solid #CFD2D9;
 `;
 
 const Map = (props) => {
