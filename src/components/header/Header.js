@@ -26,11 +26,25 @@ const ImgLogo = styled.img`
 `;
 
 const ButtonsContainer = styled.div`
-
- button {
-   padding: 10px;
-   border-radius: 5px;
- }
+  display: flex;
+`;
+const FirstButton = styled.div`
+  padding: 10px 11px;
+  margin: 0 5px;
+  border: none;
+  background: none;
+  font-size: .875rem;
+  font-weight: 600;
+  color: #515458;
+`;
+const SecondButton = styled.div`
+  padding: 10px 11px;
+  border: none;
+  border-radius: 6px;
+  background: #E03D72;
+  font-size: .875rem;
+  font-weight: 500;
+  color: #FFF;
 `;
 
 const Header = (props) => {
@@ -58,7 +72,8 @@ const Header = (props) => {
         listAddress={listAddress}
       />
       <ButtonsContainer>
-        <button>Cadastre-se aqui</button>
+        <FirstButton>Entrar</FirstButton>
+        <SecondButton>Cadastre-se aqui</SecondButton>
       </ButtonsContainer>
     </Container>
   )
