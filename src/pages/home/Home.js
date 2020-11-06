@@ -15,9 +15,6 @@ const Container = styled.div`
     flex-direction: column;
     overflow-x: scroll;
   }
-
-  /* @media (max-width: 425px) {
-  } */
 `;
 
 const Map = styled.div`

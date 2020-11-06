@@ -141,10 +141,10 @@ const SecondData = styled.span`
 `;
 
 const Infographic = () => {
-  const [logged] = useState('isChildren');
+  const [logged] = useState('isInitial');
   // logged: isInitial - isFamily - isElementary - isChildren
-  const [amountFamily] = useState(10);
-  const [amountSchools] = useState(3);
+  const [amountFamily] = useState(2);
+  const [amountSchools] = useState(4);
   const [elementarySchool] = useState(1);
   const [familyInterested] = useState(3);
   const [familyRegistered] = useState(2);
