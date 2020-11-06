@@ -49,8 +49,8 @@ class Layouts extends Component {
   }
   saveCoordinates = (info) => {
     const bound = {
-      ne: {...info.geometry.bounds.northeast},
-      sw: {...info.geometry.bounds.southwest}
+      ne: {...info.geometry.viewport.northeast},
+      sw: {...info.geometry.viewport.southwest}
     }
     this.setState({
       location: {...info.geometry.location},

@@ -12,6 +12,7 @@ import IconKindergarten from '../../assets/icons/IconKindergarten.svg';
 const AllPartsInfographic = styled.div`
   width: 100%;
   height: 80%;
+  min-height: 500px;
   display: flex;
   justify-content: center;
   position: relative;
@@ -29,11 +30,6 @@ const ContainerFamily = styled.div`
   position: absolute;
   top: 0;
   z-index: 2;
-
-  /* @media (max-width: 425px) {
-    width: auto;
-    left: 1.5rem;
-  } */
 `;
 const Family = styled.div`
   width: 100px;
@@ -69,7 +65,7 @@ const FamilyIcon = styled.img`
 const SchoolOrigin = styled.div`
   width: 100px;
   position: absolute;
-  top: 22vh;
+  top: 13rem;
   left: 0;
   z-index: 2;
 
@@ -133,7 +129,7 @@ const ConnectionHorizontal = styled.div`
   height: 15px;
   background: ${colors.grayQuaternary};
   position: absolute;
-  top: 25vh;
+  top: 14rem;
   transform: rotate(90deg);
 
   @media (max-width: 425px) {
@@ -157,7 +153,7 @@ const SelectedSchool = styled.div`
   flex-direction: column;
 
   position: absolute;
-  bottom: 20vh;
+  top: 20rem;
   z-index: 2;
 
   @media (max-width: 425px) {
@@ -214,19 +210,15 @@ const ContainerSchoolCircle = styled.div`
 `;
 
 const FamilyJourney = (props) => {
-  const width = props.amountSchools > 13 ? '600px' : '500px';
   return (
-    <AllPartsInfographic width={width}>
-    
+    <AllPartsInfographic>
       <ContainerFamily>
         <TitleFamily>Família Silva</TitleFamily>
         <Family>
           <FamilyIcon src={IconFamily} />
         </Family>
       </ContainerFamily>
-      
       <ConnectionDiagonal />
-
       <SchoolOrigin>
         <IconSchoolOrigin>
           <img src={IconKindergarten} alt='Escola de origem' />
@@ -236,9 +228,7 @@ const FamilyJourney = (props) => {
           <SubTitleSchool>Origem</SubTitleSchool>
         </TextSchoolOrigin>
       </SchoolOrigin>
-
       <ConnectionHorizontal />
-      
       <SelectedSchool>
         <NumberSelectedSchool>
           {props.elementarySchool}
@@ -254,7 +244,6 @@ const FamilyJourney = (props) => {
       </SelectedSchool>
         <ContainerSchoolCircle>
           <SchoolsPartnerCircle
-            // style={}
             amountSchools={props.amountSchools}
             list={props.list}
             logged={props.logged}

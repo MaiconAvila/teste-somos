@@ -16,7 +16,7 @@ import IconCards from '../../assets/icons/IconCards.svg';
 const Container = styled.div`
   width: 60%;
   min-width: 650px;
-  height: 100%;
+  min-height: 100%;
   background: #D3D3D3;
   display: flex;
   align-items: center;

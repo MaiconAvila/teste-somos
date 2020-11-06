@@ -105,7 +105,6 @@ const CircleSchoolsPartner = (props) => {
   };
   return (
     <PartnerSchools
-      style={props.style}
       sizeCircle={props.sizeCircle(props.amountSchools)}
       amountSchools={props.amountSchools}
     >
