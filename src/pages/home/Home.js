@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 // Components
+import Footer from '../../components/footer/Footer';
 import Infographic from '../infographic/Infographic';
 
 const Container = styled.div`
@@ -21,6 +22,7 @@ function Home() {
   return (
     <Container>
       <Infographic />
+      <Footer/>
     </Container>
   );
 }

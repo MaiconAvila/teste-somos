@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import colors from './colors';
+import colors from './Colors';
 
 // icons
 import Iconkindergarten from '../../assets/icons/IconKindergarten.svg';
