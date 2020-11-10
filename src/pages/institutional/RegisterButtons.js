@@ -9,48 +9,44 @@ import IAmFamily from '../../assets/icons/IconIAmFamily.svg';
 import IAmSchool from '../../assets/icons/IconIAmSchool.svg';
 
 const Container = styled.div`
+  width: 850px;
+  height: 150px;
+  margin: 50px 0;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap;
+  align-items: flex-end;
   justify-content: space-between;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    align-items:  center;
+    justify-content: center;
+  }
 `;
 
-const ButtonsWelcome = styled.div`
-  width: 90%;
-  display: flex;
-  justify-content: space-between;
-`;
 
 const ButtonFamily = styled.div`
-  width: 49%;
+  width: 400px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   position: relative;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    margin-bottom: 2.5rem;
+  }
 `;
 
 const IconFamily = styled.img`
+  width: 3.75rem;
+  height: 3.75rem;
   position: absolute;
   top: -2rem;
   right: 40%;
 
   @media (max-width: 768px) {
-    top: -3rem;
-    right: 35%;
-  }
-
-  @media (max-width: 414px) {
-    top: -2.7rem;
-    right: 33%;
-  }
-
-  @media (max-width: 360px) {
-    top: -2.7rem;
-    right: 30%;
-  }
-
-  @media (max-width: 320px) {
-    right: 28%;
+    right: calc(50% - 1.875rem);
   }
 `;
 
@@ -71,35 +67,26 @@ const ButtonIAmFamily = styled.button`
 `;
 
 const ButtonSchool = styled.div`
-  width: 49%;
+  width: 400px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   position: relative;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 const IconSchool = styled.img`
+  width: 3.75rem;
+  height: 3.75rem;
   position: absolute;
   top: -2rem;
   right: 40%;
 
   @media (max-width: 768px) {
-    top: -3rem;
-    right: 35%;
-  }
-
-  @media (max-width: 414px) {
-    top: -2.7rem;
-    right: 33%;
-  }
-
-  @media (max-width: 360px) {
-    top: -2.7rem;
-    right: 30%;
-  }
-
-  @media (max-width: 320px) {
-    right: 28%;
+    right: calc(50% - 1.875rem);
   }
 `;
 
@@ -123,16 +110,14 @@ const RegisterButtons = () => {
 
   return (
     <Container>
-      <ButtonsWelcome>
-        <ButtonFamily>
-          <IconFamily src={IAmFamily}/>
-          <ButtonIAmFamily>Sou Família</ButtonIAmFamily>
-        </ButtonFamily>
-        <ButtonSchool>
-          <IconSchool src={IAmSchool}/>
-          <ButtonIAmSchool>Sou Escola</ButtonIAmSchool>
-        </ButtonSchool>
-      </ButtonsWelcome>
+      <ButtonFamily>
+        <IconFamily src={IAmFamily}/>
+        <ButtonIAmFamily>Sou Família</ButtonIAmFamily>
+      </ButtonFamily>
+      <ButtonSchool>
+        <IconSchool src={IAmSchool}/>
+        <ButtonIAmSchool>Sou Escola</ButtonIAmSchool>
+      </ButtonSchool>
     </Container>
   );
 }

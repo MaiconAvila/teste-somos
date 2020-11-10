@@ -23,6 +23,10 @@ const Container = styled.div`
   ;
   background-size: 200px 200px, 315px 315px, 315px 315px;
   background-color: ${colors.primaryColorGray};
+
+  @media (max-width: 425px) {
+    padding: 5vw;
+  }
 `;
 const ArrowLink = styled.a`
   width: 50px;
@@ -52,15 +56,14 @@ const TitleWelcome = styled.h1`
   margin-bottom: 1rem;
   font-size: 2.25rem;
   font-weight: 600;
+  text-align: center;
   color: ${colors.secondaryColorGray};
 
   @media (max-width: 1024px) {
-    text-align: center;
     width: 90%;
-    z-index: 1;
   }
 
-  @media (max-width: 414px) {
+  @media (max-width: 425px) {
     font-size: 1.8rem;
   }
 `;
@@ -89,6 +92,10 @@ const ContainerInformation = styled.section`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media (max-width: 425px) {
+    flex-direction: column;
+  }
 `;
 const Infographic = styled.div`
   width: ${props => props.user === 'connected' ? '30%' : '60%'};
@@ -113,6 +120,10 @@ const InfographicItem = styled.img`
   top: ${props => props.top};
   left: ${props => props.left};
   z-index: 1;
+
+  @media (max-width: 768px) {
+    width: 120px;
+  }
 `;
 const ParagraphInstitutional = styled.p`
   width: 390px;
@@ -122,7 +133,7 @@ const ParagraphInstitutional = styled.p`
 `;
 
 const Institutional = () => {
-  const [user] = useState('disconnected');
+  const [user] = useState('connected');
   // user: disconnected, connected
   const anchor = user === 'connected' ? '#footer' : '#info';
 
@@ -150,7 +161,10 @@ const Institutional = () => {
                 <>
                   <InfographicItem src={iconCircleGray} top='30%' left='10%' />
                   <InfographicItem src={iconCircleGray} top='0' left='calc(100% - 150px)' />
-                  <InfographicItem src={iconCircleGray} top='calc(90% - 150px)' left='60%' />
+                  <InfographicItem
+                    src={iconCircleGray}
+                    top='calc(95% - 150px)' left='calc(95% - 150px)'
+                  />
                 </>
               ) : (
                 <>
