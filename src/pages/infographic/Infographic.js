@@ -1,11 +1,9 @@
-import React, { useState, useEffect } from "react";
-import styled from "styled-components";
+import React, { useState, useEffect } from 'react';
+import styled from 'styled-components';
 import colors from './Colors';
 
 // Components
 import SideButtons from '../../components/SideButtons/SideButtons';
-import CircleSchoolsPartner from './CircleSchoolsPartner';
-import FamilyCircle from './FamilyCircle';
 import InitialJourney from './InitialJourney';
 import FamilyJourney from './FamilyJourney';
 import SchoolsPartnerJourney from './SchoolsPartnerJourney';

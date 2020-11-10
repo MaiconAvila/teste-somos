@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 // Components
@@ -13,55 +13,6 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-`;
-
-const TextWelcome = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 8.6rem;
-
-  @media (max-width: 425px) {
-    margin-bottom: 5.6rem;
-  }
-`;
-
-const TitleWelcome = styled.h1`
-  font-size: 2.2rem;
-  font-weight: 600;
-  color: ${colors.secondaryColorGray};
-
-  @media (max-width: 1024px) {
-    text-align: center;
-    width: 90%;
-    z-index: 1;
-  }
-
-  @media (max-width: 414px) {
-    font-size: 1.8rem;
-  }
-`;
-
-const SubTitleWelcome = styled.h2`
-  width: 285px;
-  font-size: 1rem;
-  font-weight: 300;
-  text-align: center;
-  margin: 1.4rem 0 2rem 0;
-  color: ${colors.secondaryColorGray};
-`;
-
-const ButtonNetwork = styled.button`
-  width: 213px;
-  height: 45px;
-  font-size: 1rem;
-  font-weight: medium;
-  color: ${colors.white};
-  background: ${colors.quaternaryColorGray};
-  border-radius: 6px;
-  border: none;
-  cursor: pointer;
 `;
 
 const ButtonsWelcome = styled.div`
@@ -168,15 +119,10 @@ const ButtonIAmSchool = styled.button`
   }
 `;
 
-const WelcomeDisconnected = () => {
+const RegisterButtons = () => {
 
   return (
     <Container>
-      <TextWelcome>
-        <TitleWelcome>Bem Vindos à Rede de Benefícios</TitleWelcome>
-        <SubTitleWelcome>Entre na Rede SOMOS, matricule seus filhos nas melhores escolas e receba benefícios por isso!</SubTitleWelcome>
-        <ButtonNetwork>Ver Rede da sua Região</ButtonNetwork>
-      </TextWelcome>
       <ButtonsWelcome>
         <ButtonFamily>
           <IconFamily src={IAmFamily}/>
@@ -191,4 +137,4 @@ const WelcomeDisconnected = () => {
   );
 }
 
-export default WelcomeDisconnected;
+export default RegisterButtons;

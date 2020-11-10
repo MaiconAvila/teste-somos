@@ -3,6 +3,7 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 
 // Components
 import Header from '../../components/header/Header';
+import Footer from '../../components/footer/Footer';
 
 // Pages
 import Home from '../home/Home';
@@ -70,6 +71,7 @@ class Layouts extends Component {
         <Fragment>
           {this.renderRoutes()}
         </Fragment>
+        <Footer />
       </Fragment>
     );
   }

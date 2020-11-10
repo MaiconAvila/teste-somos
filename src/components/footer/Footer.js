@@ -79,7 +79,7 @@ const Paragraph = styled.a`
 
 const Footer = () => {
   return (
-    <Container>
+    <Container id="footer">
       <About>
         <Title>sobre</Title>
         <ContainerParagraph>
