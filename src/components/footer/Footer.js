@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { Redirect } from 'react-router-dom';
 
 const Container = styled.div`
   width: 100%;

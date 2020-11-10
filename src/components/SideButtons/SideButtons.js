@@ -77,8 +77,15 @@ const ButtonCards = styled.span`
 const SideButtons = (props) => {
   return (
     <ContainerButtons>
-      <ButtonHome><img src={IconHome}/></ButtonHome>
-      <ButtonConnection><img src={IconConnection}/></ButtonConnection>        <ButtonCards><img src={IconCards}/></ButtonCards>
+      <ButtonHome>
+        <img src={IconHome} alt='Link no menu para home' />
+      </ButtonHome>
+      <ButtonConnection>
+        <img src={IconConnection} alt='Link no menu para infográfico' />
+      </ButtonConnection>
+      <ButtonCards>
+        <img src={IconCards} alt='Link no menu para cards das escolas' />
+      </ButtonCards>
     </ContainerButtons>
   )
 }

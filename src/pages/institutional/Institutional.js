@@ -130,7 +130,7 @@ const Institutional = () => {
     <Container>
       {user === 'connected' && <SideButtons />}
       <ArrowLink href={anchor}>
-        <img src={ArrowDown} />
+        <img src={ArrowDown} alt='icon' />
       </ArrowLink>
       <WellcomeContainer user={user}>
         <TitleWelcome>Bem Vindos à Rede de Benefícios</TitleWelcome>
