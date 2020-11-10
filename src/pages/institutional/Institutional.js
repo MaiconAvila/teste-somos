@@ -15,29 +15,35 @@ import iconCircleGray from '../../assets/icons/iconCircle_lightGray.svg';
 
 const Container = styled.div`
   min-height: 100vh;
-  padding: 0 70px;
+  padding: 0 4.375rem;
   background:
-    url(${iconCirclePink}) 105% -80px no-repeat,
-    url(${iconCircleViolet}) 98% 20px no-repeat,
-    url(${iconCircleOrange}) -10% 60% no-repeat
+    url(${iconCirclePink}) 105% -5rem no-repeat,
+    url(${iconCircleViolet}) 98% 1.25rem no-repeat,
+    url(${iconCircleOrange}) -10% 90% no-repeat
   ;
-  background-size: 200px 200px, 315px 315px, 315px 315px;
+  background-size: 12.5rem 12.5rem, 19.6875rem 19.6875rem, 19.6875rem 19.6875rem;
   background-color: ${colors.primaryColorGray};
+  position: relative;
 
   @media (max-width: 425px) {
     padding: 5vw;
   }
 `;
 const ArrowLink = styled.a`
-  width: 50px;
-  height: 50px;
+  width: 1.75rem;
+  height: 1.75rem;
   display: flex;
   justify-content: center;
   align-items: center;
+
   position: absolute;
-  bottom: 20px;
-  left: 10px;
+  top: calc(93vh - 4.6875rem);
+  left: .625rem;
   cursor: pointer;
+
+  img {
+    height: 100%;
+  }
 `;
 const WellcomeContainer = styled.section`
   width: 100%;
@@ -68,7 +74,7 @@ const TitleWelcome = styled.h1`
   }
 `;
 const SubTitleWelcome = styled.h2`
-  width: 285px;
+  width: 17.8125rem;
   margin-bottom: 1rem;
   font-size: 1rem;
   font-weight: 300;
@@ -77,13 +83,13 @@ const SubTitleWelcome = styled.h2`
   color: ${colors.secondaryColorGray};
 `;
 const ButtonNetwork = styled.button`
-  width: 213px;
-  height: 45px;
+  width: 13.3125rem;
+  height: 2.8125rem;
   font-size: 1rem;
   font-weight: medium;
   color: ${colors.white};
   background: ${props => props.user === 'connected' ? '#897CBA' : colors.quaternaryColorGray};
-  border-radius: 6px;
+  border-radius: .375rem;
   border: none;
   cursor: pointer;
 `;
@@ -105,7 +111,7 @@ const Infographic = styled.div`
   position: relative;
 `;
 const ParagraphInfographic = styled.h3`
-  width: 120px;
+  width: 7.5rem;
   font-size: 1.1rem;
   font-weight: 600;
   color: ${colors.quinaryColorGray};
@@ -114,7 +120,7 @@ const ParagraphInfographic = styled.h3`
   z-index: 2;
 `;
 const InfographicItem = styled.img`
-  width: 150px;
+  width: 9.375rem;
   border-radius: 50%;
   position: absolute;
   top: ${props => props.top};
@@ -122,18 +128,18 @@ const InfographicItem = styled.img`
   z-index: 1;
 
   @media (max-width: 768px) {
-    width: 120px;
+    width: 7.5rem;
   }
 `;
 const ParagraphInstitutional = styled.p`
-  width: 390px;
+  width: 24.375rem;
   font-size: 0.8rem;
   font-weight: 300;
   color: ${colors.quinaryColorGray};
 `;
 
 const Institutional = () => {
-  const [user] = useState('connected');
+  const [user] = useState('disconnected');
   // user: disconnected, connected
   const anchor = user === 'connected' ? '#footer' : '#info';
 
@@ -160,19 +166,19 @@ const Institutional = () => {
               ? (
                 <>
                   <InfographicItem src={iconCircleGray} top='30%' left='10%' />
-                  <InfographicItem src={iconCircleGray} top='0' left='calc(100% - 150px)' />
+                  <InfographicItem src={iconCircleGray} top='0' left='calc(100% - 9.375rem)' />
                   <InfographicItem
                     src={iconCircleGray}
-                    top='calc(95% - 150px)' left='calc(95% - 150px)'
+                    top='calc(95% - 9.375rem)' left='calc(95% - 9.375rem)'
                   />
                 </>
               ) : (
                 <>
-                  <InfographicItem src={iconCircleGray} top='calc(95% - 150px)' left='0' />
-                  <InfographicItem src={iconCircleGray} top='0' left='calc(50% - 75px)' />
+                  <InfographicItem src={iconCircleGray} top='calc(95% - 9.375rem)' left='0' />
+                  <InfographicItem src={iconCircleGray} top='0' left='calc(50% - 4.6875rem)' />
                   <InfographicItem
                       src={iconCircleGray}
-                      top='calc(100% - 150px)' left='calc(100% - 150px)'
+                      top='calc(100% - 9.375rem)' left='calc(100% - 9.375rem)'
                   />
                 </>
               )

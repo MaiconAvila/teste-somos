@@ -12,7 +12,7 @@ import IconKindergarten from '../../assets/icons/IconKindergarten.svg';
 const AllPartsInfographic = styled.div`
   width: 100%;
   height: 80%;
-  min-height: 500px;
+  min-height: 31.25rem;
   display: flex;
   justify-content: center;
   position: relative;
@@ -24,7 +24,7 @@ const AllPartsInfographic = styled.div`
 
 //Family
 const ContainerFamily = styled.div`
-  min-width: 100px;
+  min-width: 6.25rem;
   display: flex;
   flex-direction: column;
   position: absolute;
@@ -32,8 +32,8 @@ const ContainerFamily = styled.div`
   z-index: 2;
 `;
 const Family = styled.div`
-  width: 100px;
-  height: 100px;
+  width: 6.25rem;
+  height: 6.25rem;
   background: ${colors.white};
   border: 4px solid ${colors.primaryColorViolet};
   border-radius: 50%;
@@ -44,15 +44,15 @@ const Family = styled.div`
   align-items: center;
 
   @media (max-width: 425px) {
-    width: 70px;
-    height: 70px;
+    width: 4.375rem;
+    height: 4.375rem;
     right: 1.5rem;
   }
 `;
 const TitleFamily = styled.h2`
   width: 100%;
-  margin-bottom: 30px;
-  font-size: 20px;
+  margin-bottom: 1.875rem;
+  font-size: 1.25rem;
   text-align: center;
   font-weight: 400;
   color: ${colors.primaryColorViolet};
@@ -63,7 +63,7 @@ const FamilyIcon = styled.img`
 
 // Origem School
 const SchoolOrigin = styled.div`
-  width: 100px;
+  width: 6.25rem;
   position: absolute;
   top: 13rem;
   left: 0;
@@ -74,8 +74,8 @@ const SchoolOrigin = styled.div`
   }
 `;
 const IconSchoolOrigin = styled.div`
-  width: 100px;
-  height: 100px;
+  width: 6.25rem;
+  height: 6.25rem;
   background: ${colors.grayQuaternary};
   border: 4px solid ${colors.primaryColorYellow};
   border-radius: 50%;
@@ -89,28 +89,28 @@ const IconSchoolOrigin = styled.div`
   }
 
   @media (max-width: 425px) {
-    width: 80px;
-    height: 80px;
+    width: 5rem;
+    height: 5rem;
   }
 `;
 const TextSchoolOrigin = styled.div`
-  margin-top: 10px;
+  margin-top: .625rem;
   text-align: center;
 `;
 const TitleSchool = styled.h3`
-  font-size: 14px;
+  font-size: .875rem;
   font-weight: 500;
   color: ${colors.secondaryColorYellow};
 `;
 const SubTitleSchool = styled.p`
-  font-size: 10px;
+  font-size: .625rem;
   font-weight: 500;
   color: ${colors.secondaryColorYellow};
 `;
 
 const ConnectionDiagonal = styled.div`
   width: 50%;
-  height: 15px;
+  height: .9375rem;
   background: ${colors.grayQuaternary};
   position: absolute;
   top: 11rem;
@@ -119,21 +119,21 @@ const ConnectionDiagonal = styled.div`
   transform: rotate(150deg);
 
   @media (max-width: 425px) {
-    width: 150px;
+    width: 9.375rem;
     top: 20vh;
     transform: rotate(125deg);
   }
 `;
 const ConnectionHorizontal = styled.div`
   width: 50%;
-  height: 15px;
+  height: .9375rem;
   background: ${colors.grayQuaternary};
   position: absolute;
   top: 14rem;
   transform: rotate(90deg);
 
   @media (max-width: 425px) {
-    width: 170px;
+    width: 10.625rem;
     top: 9rem;
     right: 2rem;
     transform: rotate(45deg);
@@ -142,8 +142,8 @@ const ConnectionHorizontal = styled.div`
 
 // Selected School
 const SelectedSchool = styled.div`
-  width: 150px;
-  height: 150px;
+  width: 9.375rem;
+  height: 9.375rem;
   background: ${colors.grayQuaternary};
   border-radius: 50%;
 
@@ -157,8 +157,8 @@ const SelectedSchool = styled.div`
   z-index: 2;
 
   @media (max-width: 425px) {
-    width: 110px;
-    height: 110px;
+    width: 1.625rem;
+    height: 1.625rem;
 
     bottom: auto;
     left: auto;
@@ -168,11 +168,11 @@ const SelectedSchool = styled.div`
 `;
 const NumberSelectedSchool = styled.h3`
   color: ${colors.tertiaryColorPink};
-  font-size: 50px;
+  font-size: 3.125rem;
   font-weight: Bold;
 
   @media (max-width: 425px) {
-    font-size: 40px;
+    font-size: 2.5rem;
   }
 `;
 const TextSelectedSchool = styled.div`
@@ -183,7 +183,7 @@ const TextSelectedSchool = styled.div`
 `;
 const ParagraphSelectedSchool = styled.p`
   color: ${colors.primaryColorPink};
-  font-size: 14px;
+  font-size: .875rem;
   font-weight: Medium;
 
   @media (max-width: 425px) {
@@ -192,7 +192,7 @@ const ParagraphSelectedSchool = styled.p`
 `;
 const SpanSelectedSchool = styled.span`
   color: ${colors.primaryColorPink};
-  font-size: 10px;
+  font-size: .625rem;
   font-weight: Medium;
 
   @media (max-width: 425px) {
@@ -247,7 +247,7 @@ const FamilyJourney = (props) => {
             amountSchools={props.amountSchools}
             list={props.list}
             logged={props.logged}
-            sizeCircle={() => '250px'}
+            sizeCircle={() => '15.625rem'}
           />
         </ContainerSchoolCircle>
     </AllPartsInfographic>

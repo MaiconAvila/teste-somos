@@ -49,7 +49,7 @@ const Contato = styled.div`
 
 const Title = styled.h2`
   font-weight: 600;
-  font-size: 13px;
+  font-size: .8125rem;
   color: #515458;
   margin-bottom: 1.12rem;
   text-transform: uppercase;
@@ -65,7 +65,7 @@ const ContainerParagraph = styled.div`
 
 const Paragraph = styled.a`
   font-weight: 300;
-  font-size: 13px;
+  font-size: .8125rem;
   color: #515458;
   margin-right: 1.25rem;
   text-decoration: none;

@@ -12,23 +12,23 @@ import InputSearch from '../inputs/InputSearch';
 import { fetchCoordinates } from '../../dataflow/RequestApi';
 
 const Container = styled.header`
-  width: 100;
-  height: 75px;
-  padding: 0 70px;
-  box-shadow: 0px 2px 4px #D6525229;
+  width: 100%;
+  height: 4.6875rem;
+  padding: 0 4.375rem;
+  box-shadow: 0 .125rem .25rem #D6525229;
   display: flex;
   justify-content: space-between;
   align-items: center;
 `;
 const ImgLogo = styled.img`
-  height: 37px;
+  height: 2.3125rem;
 `;
 const ButtonsContainer = styled.div`
   display: flex;
 `;
 const FirstButton = styled.div`
-  padding: 10px 11px;
-  margin: 0 5px;
+  padding: 0.625rem .6875rem;
+  margin: 0 .3125rem;
   border: none;
   background: none;
   font-size: .875rem;
@@ -36,9 +36,9 @@ const FirstButton = styled.div`
   color: #515458;
 `;
 const SecondButton = styled.div`
-  padding: 10px 11px;
+  padding: 0.625rem .6875rem;
   border: none;
-  border-radius: 6px;
+  border-radius: .375rem;
   background: #E03D72;
   font-size: .875rem;
   font-weight: 500;

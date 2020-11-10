@@ -9,9 +9,9 @@ import IAmFamily from '../../assets/icons/IconIAmFamily.svg';
 import IAmSchool from '../../assets/icons/IconIAmSchool.svg';
 
 const Container = styled.div`
-  width: 850px;
-  height: 150px;
-  margin: 50px 0;
+  width: 53.125rem;
+  height: 9.375rem;
+  margin: 3.125rem 0;
   display: flex;
   flex-wrap: wrap;
   align-items: flex-end;
@@ -26,7 +26,7 @@ const Container = styled.div`
 
 
 const ButtonFamily = styled.div`
-  width: 400px;
+  width: 25rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -51,23 +51,23 @@ const IconFamily = styled.img`
 `;
 
 const ButtonIAmFamily = styled.button`
-  height: 100px;
+  height: 6.25rem;
   font-size: 1.1rem;
   font-weight: 600;
   color: ${colors.primaryColorViolet};
   background: ${colors.white};
-  border-radius: 6px;
-  box-shadow: 0px 3px 6px #00000029;
-  border: 0.5px solid #707070;
+  border-radius: .375rem;
+  box-shadow: 0 .1875rem .375rem #00000029;
+  border: .5px solid #707070;
   cursor: pointer;
 
   @media (max-width: 768px) {
-    height: 80px;
+    height: 5rem;
   }
 `;
 
 const ButtonSchool = styled.div`
-  width: 400px;
+  width: 25rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -91,18 +91,18 @@ const IconSchool = styled.img`
 `;
 
 const ButtonIAmSchool = styled.button`
-  height: 100px;
+  height: 6.25rem;
   font-size: 1.1rem;
   font-weight: 600;
   color: ${colors.primaryColorPink};
   background: ${colors.white};
-  border-radius: 6px;
-  box-shadow: 0px 3px 6px #00000029;
-  border: 0.5px solid #707070;
+  border-radius: .375rem;
+  box-shadow: 0px .1875rem .375rem #00000029;
+  border: .5px solid #707070;
   cursor: pointer;
 
   @media (max-width: 768px) {
-    height: 80px;
+    height: 5rem;
   }
 `;
 

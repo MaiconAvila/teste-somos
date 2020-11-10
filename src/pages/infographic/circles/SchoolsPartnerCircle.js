@@ -23,12 +23,12 @@ const WhiteCircle = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  width: 125px;
-  height: 125px;
+  width: 7.8125rem;
+  height: 7.8125rem;
   position: absolute;
   z-index: 2;
   background-color: #ffffffBF;
-  box-shadow: 0px 2px 4px #00000029;
+  box-shadow: 0 .125rem .25rem #00000029;
   border-radius: 50%;
 
   @media (max-width: 425px) {
@@ -45,27 +45,27 @@ const DataPartnerSchools = styled.div`
 const TitlePartnerSchools = styled.h3`
   height: min-content;
   color: ${colors.primaryColorPink};
-  font-size: 48px;
+  font-size: 3rem;
   font-weight: bold;
 
   @media (max-width: 425px) {
-    font-size: 30px;
+    font-size: 1.875rem;
   }
 `;
 const ParagraphPartnerSchools = styled.p`
   width: min-content;
   color: ${colors.secondaryColorPink};
-  font-size: 15px;
+  font-size: .9375rem;
   font-weight: 300;
   text-transform: uppercase;
 
   @media (max-width: 425px) {
-    font-size: 12px;
+    font-size: .75rem;
   }
 `;
 const InsideSchoolsCircle = styled.div`
-  width: 20px;
-  height: 20px;
+  width: 1.25rem;
+  height: 1.25rem;
   border-radius: 50%;
   background: ${colors.primaryColorLightPink};
   position: absolute;

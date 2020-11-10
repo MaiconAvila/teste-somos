@@ -19,7 +19,7 @@ const AllPartsInfographic = styled.div`
 `;
 const ConnectingLink = styled.div`
   width: 85%;
-  height: 15px;
+  height: .9375rem;
   position: absolute;
   top: 12rem;
   left: 4rem;
@@ -27,8 +27,8 @@ const ConnectingLink = styled.div`
   background-color: ${colors.grayTertiary};
 
   @media (max-width: 425px) {
-    width: 180px;
-    height: 15px;
+    width: 11.25rem;
+    height: .9375rem;
     top: 8rem;
     left: 4rem;
     transform: rotate(53deg);

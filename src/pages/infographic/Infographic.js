@@ -11,7 +11,7 @@ import KindergartenJourney from './KindergartenJourney';
 
 const Container = styled.div`
   width: 60%;
-  min-width: 650px;
+  min-width: 40.625rem;
   min-height: 100%;
   background: #D3D3D3;
   display: flex;
@@ -22,14 +22,14 @@ const Container = styled.div`
   @media (max-width: 1100px) {
     width: 100%;
     min-width: auto;
-    height: calc(100vh - 75px);
+    height: calc(100vh - 4.6875rem);
   }
 `;
 const ContainerInfographic = styled.div`
   width: 100%;
-  max-width: 700px;
+  max-width: 43.75rem;
   height: 100%;
-  padding: 20px;
+  padding: 1.25rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -43,9 +43,9 @@ const TotalDataInfographic = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  width: ${props => props.width === 'isInitial' ? '285px' : '320px'};
+  width: ${props => props.width === 'isInitial' ? '17.8125rem' : '20rem'};
   background: ${colors.grayQuaternary};
-  border-radius: 6px;
+  border-radius: .375rem;
   padding: 1.5rem 1rem 1rem 1rem;
   margin-bottom: 1.5rem;
   margin-top: 1rem;
@@ -55,7 +55,7 @@ const Data = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 8px;
+  font-size: .5rem;
   text-align: center;
   width: 50%;
 `;
@@ -63,12 +63,12 @@ const ParagraphData = styled.p`
   color: ${colors.graySecondary};
 `;
 const FirstData = styled.span`
-  font-size: 36px;
+  font-size: 2.25rem;
   font-weight: bold;
   color: ${props => props.color};
 `;
 const SecondData = styled.span`
-  font-size: 36px;
+  font-size: 2.25rem;
   font-weight: bold;
   color: ${props => props.color};
 `;
@@ -110,12 +110,12 @@ const Infographic = () => {
   const sizeCircle = (info) => {
     const size = info * 15;
     if (size > 265) {
-      return '265px'
+      return '16.5625rem'
     }
     if (size < 180) {
-      return '180px'
+      return '11.25rem'
     }
-    return `${size}px`
+    return `${size / 16}rem`
   };
 
   const renderDynamicInfographic = () => {

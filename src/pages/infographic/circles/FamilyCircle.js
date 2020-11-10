@@ -27,12 +27,12 @@ const WhiteCircle = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  width: 114px;
-  height: 114px;
+  width: 7.125rem;
+  height: 7.125rem;
   position: absolute;
   z-index: 2;
   background-color: #ffffffBF;
-  box-shadow: 0px 2px 4px #00000029;
+  box-shadow: 0 .125rem .25rem #00000029;
   border-radius: 50%;
 
   @media (max-width: 425px) {
@@ -48,26 +48,26 @@ const DataFamilyCircle = styled.div`
 `;
 const TitleFamilyCircle = styled.h3`
   color: ${colors.primaryColorViolet};
-  font-size: 48px;
+  font-size: 3rem;
   font-weight: bold;
 
   @media (max-width: 425px) {
-    font-size: 30px;
+    font-size: 1.875rem;
   }
 `;
 const ParagraphFamilyCircle = styled.p`
   color: ${colors.primaryColorViolet};
-  font-size: 15px;
+  font-size: .9375rem;
   font-weight: 300;
   text-transform: uppercase;
 
   @media (max-width: 425px) {
-    font-size: 12px;
+    font-size: .75rem;
   }
 `;
 const InsideFamilyCircle = styled.div`
-  width: 20px;
-  height: 20px;
+  width: 1.25rem;
+  height: 1.25rem;
   border-radius: 50%;
   background: ${colors.secondaryColorViolet};
   position: absolute;

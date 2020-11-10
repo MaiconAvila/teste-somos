@@ -11,15 +11,19 @@ const ContainerButtons = styled.div`
   display: flex;
   flex-direction: column;
   position: absolute;
-  top: 72px;
+  top: 4.5rem;
   left: 0;
-  box-shadow: 0px 3px 6px #00000029;
-  border-radius: 6px;
+  box-shadow: 0 .1875rem .375rem #00000029;
+  border-radius: .375rem;
+`;
+
+const Icon = styled.img`
+  width: 1.5625rem;
 `;
 
 const ButtonHome = styled.span`
-  width: 35px;
-  height: 50px;
+  width: 2.1875rem;
+  height: 3.125rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -27,18 +31,18 @@ const ButtonHome = styled.span`
   border: none;
   color: ${colors.white};
   background: ${colors.gray};
-  border-top-right-radius: 6px;
+  border-top-right-radius: .375rem;
   cursor: pointer;
 
   @media (max-width: 425px) {
-    width: 30px;
-    height: 40px;
+    width: 1.875rem;
+    height: 2.5rem;
   }
 `;
 
 const ButtonConnection = styled.span`
-  width: 35px;
-  height: 50px;
+  width: 2.1875rem;
+  height: 3.125rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -50,14 +54,14 @@ const ButtonConnection = styled.span`
   cursor: pointer;
 
   @media (max-width: 425px) {
-    width: 30px;
-    height: 40px;
+    width: 1.875rem;
+    height: 2.5rem;
   }
 `;
 
 const ButtonCards = styled.span`
-  width: 35px;
-  height: 50px;
+  width: 2.1875rem;
+  height: 3.125rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -65,12 +69,12 @@ const ButtonCards = styled.span`
   border: none;
   color: ${colors.white};
   background: ${colors.gray};
-  border-bottom-right-radius: 6px;
+  border-bottom-right-radius: .375rem;
   cursor: pointer;
 
   @media (max-width: 425px) {
-    width: 30px;
-    height: 40px;
+    width: 1.875rem;
+    height: 2.5rem;
   }
 `;
 
@@ -78,13 +82,13 @@ const SideButtons = (props) => {
   return (
     <ContainerButtons>
       <ButtonHome>
-        <img src={IconHome} alt='Link no menu para home' />
+        <Icon src={IconHome} alt='Link no menu para home' />
       </ButtonHome>
       <ButtonConnection>
-        <img src={IconConnection} alt='Link no menu para infográfico' />
+        <Icon src={IconConnection} alt='Link no menu para infográfico' />
       </ButtonConnection>
       <ButtonCards>
-        <img src={IconCards} alt='Link no menu para cards das escolas' />
+        <Icon src={IconCards} alt='Link no menu para cards das escolas' />
       </ButtonCards>
     </ContainerButtons>
   )
