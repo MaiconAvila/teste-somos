@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import colors from './Colors';
 
@@ -10,29 +10,33 @@ import SchoolsPartnerJourney from './SchoolsPartnerJourney';
 import KindergartenJourney from './KindergartenJourney';
 
 const Container = styled.div`
+  width: 60%;
+  min-width: 650px;
+  min-height: 100%;
+  background: #D3D3D3;
   display: flex;
   align-items: center;
   flex-direction: column;
   position: relative;
+  
+  @media (max-width: 1100px) {
+    width: 100%;
+    min-width: auto;
+    height: calc(100vh - 75px);
+  }
 `;
-
 const ContainerInfographic = styled.div`
+  width: 100%;
+  max-width: 700px;
+  height: 100%;
+  padding: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  min-height: 100vh;
-`;
-
-const AllPartsInfographic = styled.div`
-  display: flex;
   justify-content: space-between;
-  position: relative;
-  margin-top: 2.4rem;
-  width: ${props => props.width};
+  align-items: center;
 
   @media (max-width: 425px) {
-    width: 330px;
+    max-width: none;
   }
 `;
 const TotalDataInfographic = styled.div`
@@ -47,7 +51,6 @@ const TotalDataInfographic = styled.div`
   margin-top: 1rem;
   text-transform: uppercase;
 `;
-
 const Data = styled.div`
   display: flex;
   flex-direction: column;
@@ -56,200 +59,32 @@ const Data = styled.div`
   text-align: center;
   width: 50%;
 `;
-
 const ParagraphData = styled.p`
   color: ${colors.graySecondary};
 `;
-
 const FirstData = styled.span`
   font-size: 36px;
   font-weight: bold;
   color: ${props => props.color};
 `;
-
 const SecondData = styled.span`
   font-size: 36px;
   font-weight: bold;
   color: ${props => props.color};
 `;
 
-// isFamily
-
-// is Schools
-
-const ScreenElementarySchool = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 500px;
-  margin-bottom: 8rem;
-`;
-
-const TitleElementarySchool = styled.h2`
-  text-align: center;
-  color: ${props => props.color === 'isChildren' ? `${colors.primaryColorYellow}` : `${colors.primaryColorPink}`};
-  font-size: 20px;
-  font-weight: SemiBold;
-`;
-
-const ContainerElementarySchool = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-
-const CircleSchool = styled.div`
-  width: 100px;
-  height: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  top: 0;
-  right: 12.5rem;
-  margin-top: 3rem;
-  border: ${props => props.border === 'isChildren' ? `4px solid ${colors.primaryColorYellow}` : `4px solid ${colors.primaryColorPink}`};
-  background: ${colors.white};
-  border-radius: 50%;
-  z-index: 2;
-
-  @media (max-width: 425px) {
-    width: 80px;
-    height: 80px;
-    right: 7.7rem;
-  }
-`;
-
-const ConnectionInterested = styled.div`
-  width: 250px;
-  height: 15px;
-  background: ${colors.grayQuaternary};
-  position: absolute;
-  top: 13rem;
-  right: 15rem;
-  transform: rotate(-49deg);
-
-  @media (max-width: 425px) {
-    width: 180px;
-    top: 7.5rem;
-    right: 7rem;
-  }
-`;
-
-const ConnectionRegistered = styled.div`
-  width: 250px;
-  height: 15px;
-  background: ${colors.grayQuaternary};
-  position: absolute;
-  top: 13rem;
-  right: 1rem;
-  transform: rotate(49deg);
-
-  @media (max-width: 425px) {
-    width: 180px;
-    top: 9rem;
-    right: 1rem;
-  }
-`;
-
-const CircleFamilyInterested = styled.div`
-  width: 150px;
-  height: 150px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  position: relative;
-  top: 12.4rem;
-  left: -10rem;
-  background: ${colors.grayQuaternary};
-  border-radius: 50%;
-  z-index: 2;
-
-  @media (max-width: 425px) {
-    width: 130px;
-    height: 130px;
-    top: 9.3rem;
-    left: -5.9rem;
-  }
-`;
-
-const CircleFamilyRegistered = styled.div`
-  width: 150px;
-  height: 150px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  position: relative;
-  top: 3rem;
-  left: 9rem;
-  background: ${colors.grayQuaternary};
-  border-radius: 50%;
-  z-index: 2;
-
-  @media (max-width: 425px) {
-    width: 130px;
-    height: 130px;
-    left: 6rem;
-    top: 1.1rem;
-  }
-`;
-
-const NumberFamily = styled.h3`
-  color: ${colors.primaryColorViolet};
-  font-size: 50px;
-  font-weight: Bold;
-
-  @media (max-width: 425px) {
-    font-size: 40px;
-  }
-`;
-
-const ParagraphFamily = styled.p`
-  color: ${colors.primaryColorViolet};
-  font-size: 14px;
-  font-weight: Medium;
-`;
-
-const SpanFamily = styled.span`
-  color: ${colors.primaryColorViolet};
-  font-size: 10px;
-  font-weight: Medium;
-`;
-
 const Infographic = () => {
-  const [amountSchools] = useState(15);
-  const [amountFamily] = useState(50);
-  const [logged] = useState('isFamily');
+  const [logged] = useState('isInitial');
   // logged: isInitial - isFamily - isElementary - isChildren
-  const [elementarySchool] = useState(1)
-  const [familyInterested] = useState(3)
-  const [familyRegistered] = useState(2)
-  const [childrenOrigin] = useState(6)
-  const [childrenActive] = useState(2)
-  const [width, setWidth] = useState('500px');
+  const [amountFamily] = useState(2);
+  const [amountSchools] = useState(4);
+  const [elementarySchool] = useState(1);
+  const [familyInterested] = useState(3);
+  const [familyRegistered] = useState(2);
+  const [childrenOrigin] = useState(6);
+  const [childrenActive] = useState(2);
 
-  useEffect(() => {
-    if(logged === 'isFamily' && amountSchools > 13) {
-      console.log('600px')
-      setWidth('600px')
-    } else {
-      console.log('500px')
-      setWidth('500px')
-    }
-  }, [logged, amountSchools]);
-
-  // logged === 'isFamily' && amountSchools > 13 && '630px' || logged === 'isInitial' && '500px'
-
-  // switch (logged) {
-  //   case 'isFamily' && amountSchools > 13:
-  //     return setWidth('600px')
-  //   case 'isInitial':
-  //     return setWidth('500px')
-  // }
-
-  const list = []
+  const list = [];
 
   for (let i = 1; i <= amountSchools; i++) {
     list.push({
@@ -273,28 +108,18 @@ const Infographic = () => {
   });
 
   const sizeCircle = (info) => {
-    const size = info * 16;
-    if (size > 250) {
-      return '250px'
+    const size = info * 15;
+    if (size > 265) {
+      return '265px'
     }
-    if (size < 140) {
-      return '140px'
+    if (size < 180) {
+      return '180px'
     }
     return `${size}px`
   };
 
   const renderDynamicInfographic = () => {
     switch(logged) {
-      case 'isInitial':
-        return (
-          <InitialJourney
-            logged={logged}
-            amountFamily={amountFamily}
-            amountSchools={amountSchools}
-            list={list}
-            sizeCircle={sizeCircle}
-          />
-        )
       case 'isFamily':
         return (
           <FamilyJourney
@@ -320,6 +145,16 @@ const Infographic = () => {
             childrenActive={childrenActive}
           />
         )
+      default:
+        return (
+          <InitialJourney
+            logged={logged}
+            amountFamily={amountFamily}
+            amountSchools={amountSchools}
+            list={list}
+            sizeCircle={sizeCircle}
+          />
+        )
     }
   }
 
@@ -328,23 +163,25 @@ const Infographic = () => {
       case 'isInitial':
         return 'famílias'
       case 'isFamily':
-        return 'escolas fundamentais ativas e selecionadas'
+        return 'escolas fundamentais ativas e selecionadas';
       case 'isElementary':
-        return 'escolas infantis'
+        return 'escolas infantis';
       case 'isChildren':
-        return 'famílias ativas'
+        return 'famílias ativas';
+      default:
+        return null;
     }
   }
 
   const colorFirstData = () => {
     switch (logged) {
-      case 'isInitial':
-        return `${colors.primaryColorViolet}`
       case 'isFamily':
         return `${colors.primaryColorPink}`
       case 'isElementary':
         return `${colors.primaryColorYellow}`
       case 'isChildren':
+        return `${colors.primaryColorViolet}`
+      default:
         return `${colors.primaryColorViolet}`
     }
   }
@@ -359,6 +196,8 @@ const Infographic = () => {
         return amountFamily
       case 'isChildren':
         return childrenActive
+      default:
+        return null;
     }
   }
 
@@ -372,19 +211,21 @@ const Infographic = () => {
         return 'Famílias'
       case 'isChildren':
         return 'Seus alunos'
+      default:
+        return null;
     }
   }
 
   const colorSecondData = () => {
     switch (logged) {
-      case 'isInitial':
-        return `${colors.primaryColorPink}`
       case 'isFamily':
         return `${colors.primaryColorPink}`
       case 'isElementary':
         return `${colors.primaryColorViolet}`
       case 'isChildren':
         return `${colors.primaryColorViolet}`
+      default:
+        return `${colors.primaryColorPink}`
     }
   }
 
@@ -407,7 +248,18 @@ const Infographic = () => {
           <SecondData
             color={colorSecondData}
           >
-          {logged === 'isElementary' && familyInterested + familyRegistered || logged === 'isChildren' && '0,3%' || logged === 'isInitial' && amountSchools || 'isFamily' && amountSchools}</SecondData>
+          {
+            (
+              logged === 'isElementary' && familyInterested + familyRegistered
+            ) || (
+              logged === 'isChildren' && '0,3%'
+            ) || (
+              logged === 'isInitial' && amountSchools
+            ) || (
+              'isFamily' && amountSchools
+            )
+          }
+          </SecondData>
         </Data>
       </TotalDataInfographic>
     )
@@ -417,9 +269,7 @@ const Infographic = () => {
     <Container>
       <SideButtons />
       <ContainerInfographic>
-        <AllPartsInfographic width={width}>
-          {renderDynamicInfographic()}
-        </AllPartsInfographic>
+        {renderDynamicInfographic()}
         {renderOverview()}
       </ContainerInfographic>
     </Container>

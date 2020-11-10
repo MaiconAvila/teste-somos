@@ -1,6 +1,9 @@
 import React, { Component, Fragment } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 
+// API
+import { fetchBounds } from '../../dataflow/RequestApi';
+
 // Components
 import Header from '../../components/header/Header';
 import Footer from '../../components/footer/Footer';
@@ -13,24 +16,43 @@ class Layouts extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      location: {
-        lat: -14.235004, lng: -51.92528
-      },
-      bounds: {
-        ne: {
-          lat: 5.2717863, lng: -28.650543
-        },
-        sw: {
-          lat: -34.0891, lng: -73.9828169
+      location: null,
+      bounds: null,
+      sizeMap: null,
+    }
+  }
+  componentDidMount() {
+    if(navigator.geolocation){
+      navigator.geolocation.getCurrentPosition(position => {
+      this.getBounds(`${position.coords.latitude},${position.coords.longitude}`);
+      this.setState({
+        location: {
+          lat: position.coords.latitude,
+          lng: position.coords.longitude
         }
-      }
+      })
+      });
     }
   }
 
+  getBounds = async info => {
+    let data = null;
+    try {
+      data = await fetchBounds(info);
+    }
+    finally {
+      this.setState({
+        bounds: {
+          ne: {...data.results[0].geometry.viewport.northeast},
+          sw: {...data.results[0].geometry.viewport.southwest}
+        }
+      })
+    }
+  }
   saveCoordinates = (info) => {
     const bound = {
-      ne: {...info.geometry.bounds.northeast},
-      sw: {...info.geometry.bounds.southwest}
+      ne: {...info.geometry.viewport.northeast},
+      sw: {...info.geometry.viewport.southwest}
     }
     this.setState({
       location: {...info.geometry.location},
@@ -45,7 +67,11 @@ class Layouts extends Component {
           exact
           path="/home"
           render={() => (
-            <Home />
+            <Home
+              location={this.state.location}
+              bounds={this.state.bounds}q
+              sizeMap={this.state.sizeMap}
+            />
           )}
         />
         <Route

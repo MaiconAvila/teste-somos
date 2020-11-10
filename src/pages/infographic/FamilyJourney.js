@@ -3,97 +3,45 @@ import styled from 'styled-components';
 import colors from './Colors';
 
 // Components
-import CircleSchoolsPartner from './CircleSchoolsPartner';
+import SchoolsPartnerCircle from './circles/SchoolsPartnerCircle';
 
 // icons
 import IconFamily from '../../assets/icons/IconFamily.svg';
 import IconKindergarten from '../../assets/icons/IconKindergarten.svg';
 
 const AllPartsInfographic = styled.div`
-  display: flex;
-  justify-content: space-between;
-  position: relative;
-  margin-top: 2.4rem;
-  width: ${props => props.width};
-
-  @media (max-width: 425px) {
-    width: 330px;
-  }
-`;
-
-const ContainerFamily = styled.div`
-  width: 360px;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-
-  @media (max-width: 425px) {
-    width: 175px;
-    left: 1.5rem;
-  }
-`;
-const TitleContainerFamily = styled.h2`
-  color: ${colors.primaryColorViolet};
-  font-size: 20px;
-  text-align: end;
-  font-weight: SemiBold;
-`;
-const SchoolOrigin = styled.div`
-  width: 100px;
-  z-index: 2;
-`;
-const IconSchoolOrigin = styled.div`
-  width: 100px;
-  height: 100px;
+  width: 100%;
+  height: 80%;
+  min-height: 500px;
   display: flex;
   justify-content: center;
-  align-items: center;
-  margin-top: 5rem;
-  border: 4px solid ${colors.primaryColorYellow};
-  background: ${colors.grayQuaternary};
-  border-radius: 50%;
+  position: relative;
 
   @media (max-width: 425px) {
-    width: 80px;
-    height: 80px;
-    position: relative;
-    top: 5rem;
-    right: 0.5rem;
-    margin-top: 0;
-    margin-bottom: 5.5rem;
+    width: 95%;
   }
 `;
-const TextSchoolOrigin = styled.div`
-  text-align: center;
-  margin-top: 1rem;
 
-  @media (max-width: 425px) {
-    margin-left: -3rem;
-  }
-`;
-const TitleSchool = styled.h3`
-  font-size: 14px;
-  font-weight: Medium;
-  color: ${colors.secondaryColorYellow};
-`;
-const ParagraphSchool = styled.p`
-  font-size: 10px;
-  font-weight: Medium;
-  color: ${colors.secondaryColorYellow};
+//Family
+const ContainerFamily = styled.div`
+  min-width: 100px;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  z-index: 2;
 `;
 const Family = styled.div`
   width: 100px;
   height: 100px;
+  background: ${colors.white};
+  border: 4px solid ${colors.primaryColorViolet};
+  border-radius: 50%;
+
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: absolute;
-  top: 3rem;
-  right: 0;
-  border: 4px solid ${colors.primaryColorViolet};
-  background: ${colors.white};
-  border-radius: 50%;
-  z-index: 2;
 
   @media (max-width: 425px) {
     width: 70px;
@@ -101,57 +49,121 @@ const Family = styled.div`
     right: 1.5rem;
   }
 `;
-const FamilyIcon = styled.img`
-  
+const TitleFamily = styled.h2`
+  width: 100%;
+  margin-bottom: 30px;
+  font-size: 20px;
+  text-align: center;
+  font-weight: 400;
+  color: ${colors.primaryColorViolet};
 `;
+const FamilyIcon = styled.img`
+  width: 60%;
+`;
+
+// Origem School
+const SchoolOrigin = styled.div`
+  width: 100px;
+  position: absolute;
+  top: 13rem;
+  left: 0;
+  z-index: 2;
+
+  @media (max-width: 425px) {
+    top: 25vh;
+  }
+`;
+const IconSchoolOrigin = styled.div`
+  width: 100px;
+  height: 100px;
+  background: ${colors.grayQuaternary};
+  border: 4px solid ${colors.primaryColorYellow};
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: 60%;
+  }
+
+  @media (max-width: 425px) {
+    width: 80px;
+    height: 80px;
+  }
+`;
+const TextSchoolOrigin = styled.div`
+  margin-top: 10px;
+  text-align: center;
+`;
+const TitleSchool = styled.h3`
+  font-size: 14px;
+  font-weight: 500;
+  color: ${colors.secondaryColorYellow};
+`;
+const SubTitleSchool = styled.p`
+  font-size: 10px;
+  font-weight: 500;
+  color: ${colors.secondaryColorYellow};
+`;
+
 const ConnectionDiagonal = styled.div`
-  width: 250px;
+  width: 50%;
   height: 15px;
   background: ${colors.grayQuaternary};
   position: absolute;
-  top: 12rem;
-  right: -1.5rem;
-  transform: rotate(-62deg);
+  top: 11rem;
+  left: 1rem;
+  z-index: 1;
+  transform: rotate(150deg);
 
   @media (max-width: 425px) {
-    top: 12rem;
-    width: 170px;
-    right: -1.8rem;
-    transform: rotate(-90deg);
+    width: 150px;
+    top: 20vh;
+    transform: rotate(125deg);
   }
 `;
 const ConnectionHorizontal = styled.div`
-  width: 250px;
+  width: 50%;
   height: 15px;
   background: ${colors.grayQuaternary};
   position: absolute;
-  top: 8rem;
-  right: 5rem;
-  transform: rotate(-9deg);
+  top: 14rem;
+  transform: rotate(90deg);
 
   @media (max-width: 425px) {
-    width: 100px;
-    right: 3rem;
-    top: 6rem;
-    transform: rotate(-41deg);
+    width: 170px;
+    top: 9rem;
+    right: 2rem;
+    transform: rotate(45deg);
   }
 `;
+
+// Selected School
 const SelectedSchool = styled.div`
   width: 150px;
   height: 150px;
+  background: ${colors.grayQuaternary};
+  border-radius: 50%;
+
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background: ${colors.grayQuaternary};
-  border-radius: 50%;
-  margin-left: 37%;
+
+  position: absolute;
+  top: 20rem;
   z-index: 2;
 
   @media (max-width: 425px) {
     width: 110px;
     height: 110px;
-    margin-left: 33%;
+
+    bottom: auto;
+    left: auto;
+    top: 22vh;
+    right: 0;
   }
 `;
 const NumberSelectedSchool = styled.h3`
@@ -187,39 +199,57 @@ const SpanSelectedSchool = styled.span`
     margin-bottom: 0.5rem;
   }
 `;
+const ContainerSchoolCircle = styled.div`
+  position: absolute;
+  right: 0;
+
+  @media (max-width: 425px) {
+    right: 15vw;
+    bottom: 0;
+  }
+`;
 
 const FamilyJourney = (props) => {
-  const width = props.amountSchools > 13 ? '600px' : '500px';
   return (
-    <AllPartsInfographic width={width}>
+    <AllPartsInfographic>
       <ContainerFamily>
-        <TitleContainerFamily>Família Silva</TitleContainerFamily>
-        <SchoolOrigin>
-          <IconSchoolOrigin><img src={IconKindergarten} /></IconSchoolOrigin>
-          <TextSchoolOrigin>
-            <TitleSchool>Escola Infantil</TitleSchool>
-            <ParagraphSchool>Origem</ParagraphSchool>
-          </TextSchoolOrigin>
-        </SchoolOrigin>
+        <TitleFamily>Família Silva</TitleFamily>
         <Family>
           <FamilyIcon src={IconFamily} />
-        </Family> 
-        <ConnectionDiagonal></ConnectionDiagonal>
-        <ConnectionHorizontal></ConnectionHorizontal>
-        <SelectedSchool>
-          <NumberSelectedSchool>{props.elementarySchool}</NumberSelectedSchool>
-          <TextSelectedSchool>
-            <ParagraphSelectedSchool>Escola Fundamental</ParagraphSelectedSchool>
-            <SpanSelectedSchool>Selecionadas</SpanSelectedSchool>
-          </TextSelectedSchool>
-        </SelectedSchool>
+        </Family>
       </ContainerFamily>
-      <CircleSchoolsPartner
-        amountSchools={props.amountSchools}
-        list={props.list}
-        logged={props.logged}
-        sizeCircle={props.sizeCircle}
-      />
+      <ConnectionDiagonal />
+      <SchoolOrigin>
+        <IconSchoolOrigin>
+          <img src={IconKindergarten} alt='Escola de origem' />
+        </IconSchoolOrigin>
+        <TextSchoolOrigin>
+          <TitleSchool>Escola Infantil</TitleSchool>
+          <SubTitleSchool>Origem</SubTitleSchool>
+        </TextSchoolOrigin>
+      </SchoolOrigin>
+      <ConnectionHorizontal />
+      <SelectedSchool>
+        <NumberSelectedSchool>
+          {props.elementarySchool}
+        </NumberSelectedSchool>
+        <TextSelectedSchool>
+          <ParagraphSelectedSchool>
+            Escola Fundamental
+          </ParagraphSelectedSchool>
+          <SpanSelectedSchool>
+            Selecionadas
+          </SpanSelectedSchool>
+        </TextSelectedSchool>
+      </SelectedSchool>
+        <ContainerSchoolCircle>
+          <SchoolsPartnerCircle
+            amountSchools={props.amountSchools}
+            list={props.list}
+            logged={props.logged}
+            sizeCircle={() => '250px'}
+          />
+        </ContainerSchoolCircle>
     </AllPartsInfographic>
   )
 };

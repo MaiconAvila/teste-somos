@@ -25,7 +25,7 @@ const Input = styled.input`
   }
 `
 const IconSearch = styled.img`
-  width: 16px;
+  height: 19px;
   position: absolute;
   right: 10px;
 `;
@@ -59,6 +59,7 @@ const InputSearch = (props) => {
       <Input
         type='text'
         onChange={props.getParameter}
+        placeholder='Comece a procurar'
       />
       <IconSearch src={searchIcon} />
       {props.listAddress.length > 0 &&

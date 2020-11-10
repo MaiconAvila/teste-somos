@@ -15,4 +15,4 @@ const colors = {
   primaryColorLightPink: "#E26E94",
 };
 
-export default colors 
+export default colors;
