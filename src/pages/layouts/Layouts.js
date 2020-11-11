@@ -16,7 +16,7 @@ class Layouts extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      location: null,
+      coordinates: null,
       bounds: null,
       sizeMap: null,
     }
@@ -26,7 +26,7 @@ class Layouts extends Component {
       navigator.geolocation.getCurrentPosition(position => {
       this.getBounds(`${position.coords.latitude},${position.coords.longitude}`);
       this.setState({
-        location: {
+        coordinates: {
           lat: position.coords.latitude,
           lng: position.coords.longitude
         }
@@ -55,7 +55,7 @@ class Layouts extends Component {
       sw: {...info.geometry.viewport.southwest}
     }
     this.setState({
-      location: {...info.geometry.location},
+      coordinates: {...info.geometry.location},
       bounds: bound,
     })
   };
@@ -66,23 +66,24 @@ class Layouts extends Component {
         <Route
           exact
           path="/home"
-          render={() => (
-            <Home
-              location={this.state.location}
-              bounds={this.state.bounds}q
-              sizeMap={this.state.sizeMap}
-            />
-          )}
-        />
+        >
+          <Home
+            coordinates={this.state.coordinates}
+            bounds={this.state.bounds}
+            sizeMap={this.state.sizeMap}
+            {...this.props}
+          />
+        </Route>
+        <Route
+          path='/institutional'
+        >
+          <Institutional {...this.props} />
+        </Route>
         <Route
           exact
           path='/'
         >
           <Redirect to='/home' />
-        </Route>
-        <Route
-          path='/institutional'>
-          <Institutional />
         </Route>
       </Switch>
     )

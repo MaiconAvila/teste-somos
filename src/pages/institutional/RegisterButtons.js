@@ -43,11 +43,7 @@ const IconFamily = styled.img`
   height: 3.75rem;
   position: absolute;
   top: -2rem;
-  right: 40%;
-
-  @media (max-width: 768px) {
-    right: calc(50% - 1.875rem);
-  }
+  right: calc(50% - 1.875rem);
 `;
 
 const ButtonIAmFamily = styled.button`
@@ -83,11 +79,7 @@ const IconSchool = styled.img`
   height: 3.75rem;
   position: absolute;
   top: -2rem;
-  right: 40%;
-
-  @media (max-width: 768px) {
-    right: calc(50% - 1.875rem);
-  }
+  right: calc(50% - 1.875rem);
 `;
 
 const ButtonIAmSchool = styled.button`

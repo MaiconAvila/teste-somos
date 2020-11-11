@@ -138,14 +138,14 @@ const ParagraphInstitutional = styled.p`
   color: ${colors.quinaryColorGray};
 `;
 
-const Institutional = () => {
-  const [user] = useState('disconnected');
+const Institutional = (props) => {
+  const [user] = useState('connected');
   // user: disconnected, connected
   const anchor = user === 'connected' ? '#footer' : '#info';
 
   return (
     <Container>
-      {user === 'connected' && <SideButtons />}
+      {user === 'connected' && <SideButtons {...props} />}
       <ArrowLink href={anchor}>
         <img src={ArrowDown} alt='icon' />
       </ArrowLink>

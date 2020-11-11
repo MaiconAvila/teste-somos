@@ -13,6 +13,7 @@ const ContainerButtons = styled.div`
   position: absolute;
   top: 4.5rem;
   left: 0;
+  z-index: 5;
   box-shadow: 0 .1875rem .375rem #00000029;
   border-radius: .375rem;
 `;
@@ -79,12 +80,19 @@ const ButtonCards = styled.span`
 `;
 
 const SideButtons = (props) => {
+  const goToHome = () => {
+    props.history.replace('/institutional/');
+  }
+  const goToInfographic = () => {
+    props.history.replace('/home/');
+  }
+
   return (
     <ContainerButtons>
-      <ButtonHome>
+      <ButtonHome onClick={goToHome} >
         <Icon src={IconHome} alt='Link no menu para home' />
       </ButtonHome>
-      <ButtonConnection>
+      <ButtonConnection onClick={goToInfographic} >
         <Icon src={IconConnection} alt='Link no menu para infográfico' />
       </ButtonConnection>
       <ButtonCards>
