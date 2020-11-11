@@ -1,102 +1,35 @@
-import React, { useState } from "react";
-import styled from "styled-components";
-import colors from './colors';
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import colors from './Colors';
 
 // Components
+import SideButtons from '../../components/SideButtons/SideButtons';
 import InitialJourney from './InitialJourney';
 import FamilyJourney from './FamilyJourney';
 import SchoolsPartnerJourney from './SchoolsPartnerJourney';
 import KindergartenJourney from './KindergartenJourney';
 
-// Icons
-import IconHome from '../../assets/icons/IconHome.svg';
-import IconConnection from '../../assets/icons/IconConnection.svg';
-import IconCards from '../../assets/icons/IconCards.svg';
-
 const Container = styled.div`
   width: 60%;
-  min-width: 650px;
+  min-width: 40.625rem;
   min-height: 100%;
   background: #D3D3D3;
   display: flex;
   align-items: center;
   flex-direction: column;
   position: relative;
-
+  
   @media (max-width: 1100px) {
     width: 100%;
     min-width: auto;
-    height: calc(100vh - 75px);
-  }
-`;
-const ContainerButtons = styled.div`
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  top: 72px;
-  left: 0;
-  box-shadow: 0px 3px 6px #00000029;
-  border-radius: 6px;
-`;
-const ButtonHome = styled.span`
-  width: 35px;
-  height: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-right: 2%;
-  border: none;
-  color: ${colors.white};
-  background: ${colors.gray};
-  border-top-right-radius: 6px;
-  cursor: pointer;
-
-  @media (max-width: 425px) {
-    width: 30px;
-    height: 40px;
-  }
-`;
-const ButtonConnection = styled.span`
-  width: 35px;
-  height: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-right: 2%;
-  border-top: 1px solid ${colors.white};
-  border-bottom: 1px solid ${colors.white};
-  color: ${colors.white};
-  background: ${colors.gray};
-  cursor: pointer;
-
-  @media (max-width: 425px) {
-    width: 30px;
-    height: 40px;
-  }
-`;
-const ButtonCards = styled.span`
-  width: 35px;
-  height: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-right: 2%;
-  border: none;
-  color: ${colors.white};
-  background: ${colors.gray};
-  border-bottom-right-radius: 6px;
-  cursor: pointer;
-
-  @media (max-width: 425px) {
-    width: 30px;
-    height: 40px;
+    height: calc(100vh - 4.6875rem);
   }
 `;
 const ContainerInfographic = styled.div`
   width: 100%;
-  max-width: 700px;
+  max-width: 43.75rem;
   height: 100%;
-  padding: 20px;
+  padding: 1.25rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -110,9 +43,9 @@ const TotalDataInfographic = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  width: ${props => props.width === 'isInitial' ? '285px' : '320px'};
+  width: ${props => props.width === 'isInitial' ? '17.8125rem' : '20rem'};
   background: ${colors.grayQuaternary};
-  border-radius: 6px;
+  border-radius: .375rem;
   padding: 1.5rem 1rem 1rem 1rem;
   margin-bottom: 1.5rem;
   margin-top: 1rem;
@@ -122,7 +55,7 @@ const Data = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 8px;
+  font-size: .5rem;
   text-align: center;
   width: 50%;
 `;
@@ -130,12 +63,12 @@ const ParagraphData = styled.p`
   color: ${colors.graySecondary};
 `;
 const FirstData = styled.span`
-  font-size: 36px;
+  font-size: 2.25rem;
   font-weight: bold;
   color: ${props => props.color};
 `;
 const SecondData = styled.span`
-  font-size: 36px;
+  font-size: 2.25rem;
   font-weight: bold;
   color: ${props => props.color};
 `;
@@ -177,12 +110,12 @@ const Infographic = () => {
   const sizeCircle = (info) => {
     const size = info * 15;
     if (size > 265) {
-      return '265px'
+      return '16.5625rem'
     }
     if (size < 180) {
-      return '180px'
+      return '11.25rem'
     }
-    return `${size}px`
+    return `${size / 16}rem`
   };
 
   const renderDynamicInfographic = () => {
@@ -334,21 +267,9 @@ const Infographic = () => {
 
   return (
     <Container>
-      <ContainerButtons>
-        <ButtonHome>
-          <img src={IconHome} alt='Link no menu para home' />
-        </ButtonHome>
-        <ButtonConnection>
-          <img src={IconConnection} alt='Link no menu para infográfico' />
-        </ButtonConnection>
-        <ButtonCards>
-          <img src={IconCards} alt='Link no menu para cards das escolas' />
-        </ButtonCards>
-      </ContainerButtons>
+      <SideButtons />
       <ContainerInfographic>
-        {/* <AllPartsInfographic width={width}> */}
-          {renderDynamicInfographic()}
-        {/* </AllPartsInfographic> */}
+        {renderDynamicInfographic()}
         {renderOverview()}
       </ContainerInfographic>
     </Container>

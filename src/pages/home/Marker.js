@@ -10,28 +10,28 @@ const ContainerPin = styled.div`
   cursor: ${props => props.show && 'pointer'};
 `;
 const ModalPin = styled.div`
-  width: 250px;
-  padding: 10px;
+  width: 15.625rem;
+  padding: .625rem;
   background: #FFF;
-  border-radius: 6px;
+  border-radius: .375rem;
   position: absolute;
-  bottom: 35px;
+  bottom: 2.1875rem;
   z-index: ${props => props.zIndex ? 1 : 0}
 `;
 const NameSchool = styled.div`
-  padding: 5px 0;
-  font-size: 18px;
+  padding: .3125rem 0;
+  font-size: 1.125rem;
   font-weight: 500;
   color: #E03D72;
 `;
 const AddressSchool = styled.div`
-  padding: 5px 0;
-  font-size: 12px;
+  padding: .3125rem 0;
+  font-size: .75rem;
   font-weight: 400;
   color: #888586;
 `;
 const Pin = styled.img`
-  width: ${props => props.small ? '25px' : '35px'};
+  width: ${props => props.small ? '1.5625rem' : '2.1875rem'};
   position: absolute;
   bottom: 0;
   z-index: ${props => props.zIndex ? 1 : 0}

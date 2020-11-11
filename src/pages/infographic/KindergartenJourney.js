@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import colors from './colors';
+import colors from './Colors';
 
 // icons
 import Iconkindergarten from '../../assets/icons/IconKindergarten.svg';
@@ -8,7 +8,7 @@ import Iconkindergarten from '../../assets/icons/IconKindergarten.svg';
 const ScreenElementarySchool = styled.div`
   width: 100%;
   height: 100%;
-  min-height: 500px;
+  min-height: 31.25rem;
   margin-top: 2.4rem;
   display: flex;
   flex-direction: column;
@@ -18,18 +18,18 @@ const ScreenElementarySchool = styled.div`
 const TitleElementarySchool = styled.h2`
   text-align: center;
   color: ${props => props.color === 'isChildren' ? `${colors.primaryColorYellow}` : `${colors.primaryColorPink}`};
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: SemiBold;
 `;
 const CircleSchool = styled.div`
-  width: 100px;
-  height: 100px;
+  width: 6.25rem;
+  height: 6.25rem;
   display: flex;
   justify-content: center;
   align-items: center;
   position: absolute;
   top: 3rem;
-  border: ${props => props.border === 'isChildren' ? `4px solid ${colors.primaryColorYellow}` : `4px solid ${colors.primaryColorPink}`};
+  border: ${props => props.border === 'isChildren' ? `.25rem solid ${colors.primaryColorYellow}` : `.25rem solid ${colors.primaryColorPink}`};
   background: ${colors.white};
   border-radius: 50%;
   z-index: 2;
@@ -39,13 +39,13 @@ const CircleSchool = styled.div`
   }
 
   @media (max-width: 425px) {
-    width: 80px;
-    height: 80px;
+    width: 5rem;
+    height: 5rem;
   }
 `;
 const ConnectionInterested = styled.div`
   width: 38%;
-  height: 15px;
+  height: .9375rem;
   background: ${colors.grayQuaternary};
   position: absolute;
   top: 13rem;
@@ -60,7 +60,7 @@ const ConnectionInterested = styled.div`
 `;
 const ConnectionRegistered = styled.div`
 width: 38%;
-  height: 15px;
+  height: .9375rem;
   background: ${colors.grayQuaternary};
   position: absolute;
   top: 13rem;
@@ -74,8 +74,8 @@ width: 38%;
   }
 `;
 const CircleFamilyInterested = styled.div`
-  width: 150px;
-  height: 150px;
+  width: 9.375rem;
+  height: 9.375rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -88,15 +88,15 @@ const CircleFamilyInterested = styled.div`
   z-index: 2;
 
   @media (max-width: 425px) {
-    width: 130px;
-    height: 130px;
+    width: 8.125rem;
+    height: 8.125rem;
     top: 25vh;
     left: 2vw;
   }
 `;
 const CircleFamilyRegistered = styled.div`
-  width: 150px;
-  height: 150px;
+  width: 9.375rem;
+  height: 9.375rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -109,29 +109,29 @@ const CircleFamilyRegistered = styled.div`
   z-index: 2;
 
   @media (max-width: 425px) {
-    width: 130px;
-    height: 130px;
+    width: 8.125rem;
+    height: 8.125rem;
     top: 25vh;
     right: 2vw;
   }
 `;
 const NumberFamily = styled.h3`
   color: ${colors.primaryColorViolet};
-  font-size: 50px;
+  font-size: 3.125rem;
   font-weight: Bold;
 
   @media (max-width: 425px) {
-    font-size: 40px;
+    font-size: 2.5rem;
   }
 `;
 const ParagraphFamily = styled.p`
   color: ${colors.primaryColorViolet};
-  font-size: 14px;
+  font-size: .875rem;
   font-weight: Medium;
 `;
 const SpanFamily = styled.span`
   color: ${colors.primaryColorViolet};
-  font-size: 10px;
+  font-size: .625rem;
   font-weight: Medium;
 `;
 

@@ -6,9 +6,11 @@ import { fetchBounds } from '../../dataflow/RequestApi';
 
 // Components
 import Header from '../../components/header/Header';
+import Footer from '../../components/footer/Footer';
 
 // Pages
 import Home from '../home/Home';
+import Institutional from '../institutional/Institutional';
 
 class Layouts extends Component {
   constructor(props) {
@@ -78,6 +80,10 @@ class Layouts extends Component {
         >
           <Redirect to='/home' />
         </Route>
+        <Route
+          path='/institutional'>
+          <Institutional />
+        </Route>
       </Switch>
     )
   }
@@ -91,6 +97,7 @@ class Layouts extends Component {
         <Fragment>
           {this.renderRoutes()}
         </Fragment>
+        <Footer />
       </Fragment>
     );
   }

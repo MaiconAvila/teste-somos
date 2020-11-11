@@ -4,8 +4,8 @@ import styled from 'styled-components';
 import searchIcon from '../../assets/images/search_gray.svg';
 
 const Container = styled.div`
-  width: 217px;
-  height: 35px;
+  width: 13.5625rem;
+  height: 2.1875rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -15,38 +15,54 @@ const Container = styled.div`
 const Input = styled.input`
   width: 100%;
   height: 100%;
-  padding: 10px 12px;
-  padding-right: 30px;
-  border-radius: 6px;
-  border: solid .5px #888586;
+  padding: 0.625rem .75rem;
+  padding-right: 1.875rem;
+  border-radius: .375rem;
+  border: solid .03125rem #888586;
 
-  &:focus {
-    outline: none;
+  font-size: .75rem;
+  font-weight: 600;
+  color: #515458;
+
+  &::-webkit-input-placeholder {
+   color: #888586;
+  }
+
+  &:-moz-placeholder { /* Firefox 18- */
+    color: #888586;
+  }
+
+  &::-moz-placeholder {  /* Firefox 19+ */
+    color: #888586;
+  }
+
+  &:-ms-input-placeholder {  
+    color: #888586;
   }
 `
 const IconSearch = styled.img`
-  height: 19px;
+  height: 1.1875rem;
   position: absolute;
-  right: 10px;
+  right: 0.625rem;
 `;
 
 const List = styled.ul`
   width: 100%;
   position: absolute;
-  top: 36px;
+  top: 2.25rem;
   z-index: 1;
   background: #FFF;
-  border-radius: 6px;
-  border: solid 1px;
+  border-radius: .375rem;
+  border: solid .0625rem;
   list-style: none;
 `;
 
 const ListItem = styled.li`
   width: 100%;
-  padding: 10px 12px;
-  font-size: 14px;
+  padding: 0.625rem .75rem;
+  font-size: .875rem;
   color: #515458;
-  border-bottom: solid 0.5px #727780;
+  border-bottom: solid 0.03125rem #727780;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;

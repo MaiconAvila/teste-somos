@@ -2,15 +2,15 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import Map from './Map';
 
-
-import loaderMap from '../../assets/images/map_loading.gif';
-
 // Components
 import Infographic from '../infographic/Infographic';
 
+// Assets
+import loaderMap from '../../assets/images/map_loading.gif';
+
 const Container = styled.div`
   width: 100%;
-  height: calc(100vh - 75px);
+  height: calc(100vh - 4.6875rem);
   display: flex;
   flex-wrap: wrap;
 
@@ -33,7 +33,7 @@ const ImageLoader = styled.img`
   width: 50%;
 `;
 const TextLoader = styled.p`
-  font: 20px bold;
+  font: 1.25rem bold;
   color: #E03D72;
 `;
 function Home(props) {
