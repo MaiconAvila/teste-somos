@@ -65,7 +65,7 @@ const TitleWelcome = styled.h1`
   text-align: center;
   color: ${colors.secondaryColorGray};
 
-  @media (max-width: 1024px) {
+  @media (max-width: 102.25rem) {
     width: 90%;
   }
 

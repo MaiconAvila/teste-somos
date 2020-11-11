@@ -73,7 +73,7 @@ const InsideFamilyCircle = styled.div`
   position: absolute;
   top: ${props => props.positionY}%;
   left: ${props => props.positionX}%;
-  border: 1px solid ${colors.primaryColorViolet};
+  border: .0625rem solid ${colors.primaryColorViolet};
   z-index: 1;
 
   &:hover {

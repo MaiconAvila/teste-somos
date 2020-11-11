@@ -58,7 +58,7 @@ const ButtonIAmFamily = styled.button`
   background: ${colors.white};
   border-radius: .375rem;
   box-shadow: 0 .1875rem .375rem #00000029;
-  border: .5px solid #707070;
+  border: .03125rem solid #707070;
   cursor: pointer;
 
   @media (max-width: 768px) {
@@ -97,8 +97,8 @@ const ButtonIAmSchool = styled.button`
   color: ${colors.primaryColorPink};
   background: ${colors.white};
   border-radius: .375rem;
-  box-shadow: 0px .1875rem .375rem #00000029;
-  border: .5px solid #707070;
+  box-shadow: 0 .1875rem .375rem #00000029;
+  border: .03125rem solid #707070;
   cursor: pointer;
 
   @media (max-width: 768px) {

@@ -29,7 +29,7 @@ const CircleSchool = styled.div`
   align-items: center;
   position: absolute;
   top: 3rem;
-  border: ${props => props.border === 'isChildren' ? `4px solid ${colors.primaryColorYellow}` : `4px solid ${colors.primaryColorPink}`};
+  border: ${props => props.border === 'isChildren' ? `.25rem solid ${colors.primaryColorYellow}` : `.25rem solid ${colors.primaryColorPink}`};
   background: ${colors.white};
   border-radius: 50%;
   z-index: 2;

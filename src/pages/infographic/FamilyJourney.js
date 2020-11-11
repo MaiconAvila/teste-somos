@@ -35,7 +35,7 @@ const Family = styled.div`
   width: 6.25rem;
   height: 6.25rem;
   background: ${colors.white};
-  border: 4px solid ${colors.primaryColorViolet};
+  border: .25rem solid ${colors.primaryColorViolet};
   border-radius: 50%;
 
   display: flex;
@@ -77,7 +77,7 @@ const IconSchoolOrigin = styled.div`
   width: 6.25rem;
   height: 6.25rem;
   background: ${colors.grayQuaternary};
-  border: 4px solid ${colors.primaryColorYellow};
+  border: .25rem solid ${colors.primaryColorYellow};
   border-radius: 50%;
 
   display: flex;

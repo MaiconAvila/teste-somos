@@ -18,7 +18,7 @@ const Input = styled.input`
   padding: 0.625rem .75rem;
   padding-right: 1.875rem;
   border-radius: .375rem;
-  border: solid .5px #888586;
+  border: solid .03125rem #888586;
 
   font-size: .75rem;
   font-weight: 600;
@@ -53,7 +53,7 @@ const List = styled.ul`
   z-index: 1;
   background: #FFF;
   border-radius: .375rem;
-  border: solid 1px;
+  border: solid .0625rem;
   list-style: none;
 `;
 
@@ -62,7 +62,7 @@ const ListItem = styled.li`
   padding: 0.625rem .75rem;
   font-size: .875rem;
   color: #515458;
-  border-bottom: solid 0.5px #727780;
+  border-bottom: solid 0.03125rem #727780;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;

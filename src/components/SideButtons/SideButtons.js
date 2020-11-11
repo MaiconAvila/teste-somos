@@ -47,8 +47,8 @@ const ButtonConnection = styled.span`
   justify-content: center;
   align-items: center;
   padding-right: 2%;
-  border-top: 1px solid ${colors.white};
-  border-bottom: 1px solid ${colors.white};
+  border-top: .0625rem solid ${colors.white};
+  border-bottom: .0625rem solid ${colors.white};
   color: ${colors.white};
   background: ${colors.gray};
   cursor: pointer;

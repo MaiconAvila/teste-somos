@@ -71,7 +71,7 @@ const InsideSchoolsCircle = styled.div`
   position: absolute;
   top: ${props => props.positionY}%;
   left: ${props => props.positionX}%;
-  border: 1px solid ${colors.secondaryColorPink};
+  border: .0625rem solid ${colors.secondaryColorPink};
 
   &:hover {
     animation: shake 0.5s linear;
