@@ -54,8 +54,8 @@ const Map = (props) => {
   ])
 
   useEffect(() => {
-    setCenter(props.location);
-  }, [props.location]);
+    setCenter(props.coordinates);
+  }, [props.coordinates]);
   useEffect(() => {
     const fit = fitBounds(props.bounds, props.sizeMap);
     setZoom(fit.zoom > 16 ? 16 : fit.zoom);

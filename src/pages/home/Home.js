@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import Map from './Map';
 
 // Components
+import SideButtons from '../../components/SideButtons/SideButtons';
 import Infographic from '../infographic/Infographic';
+import Map from './Map';
 
 // Assets
 import loaderMap from '../../assets/images/map_loading.gif';
@@ -13,6 +14,7 @@ const Container = styled.div`
   height: calc(100vh - 4.6875rem);
   display: flex;
   flex-wrap: wrap;
+  position: relative;
 
   @media (max-width: 1100px) {
     height: auto;
@@ -36,6 +38,7 @@ const TextLoader = styled.p`
   font: 1.25rem bold;
   color: #E03D72;
 `;
+
 function Home(props) {
   const [sizeMap, setSizeMap] = useState({
     width: (window.innerWidth / 100) * 40,
@@ -57,11 +60,12 @@ function Home(props) {
 
   return (
     <Container>
+      <SideButtons {...props} />
       <Infographic />
-      {props.location && props.bounds && sizeMap
+      {props.coordinates && props.bounds && sizeMap
         ? (
           <Map
-            location={props.location}
+            coordinates={props.coordinates}
             bounds={props.bounds}
             sizeMap={sizeMap}
           />

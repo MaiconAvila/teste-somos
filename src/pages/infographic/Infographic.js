@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import colors from './Colors';
 
 // Components
-import SideButtons from '../../components/SideButtons/SideButtons';
 import InitialJourney from './InitialJourney';
 import FamilyJourney from './FamilyJourney';
 import SchoolsPartnerJourney from './SchoolsPartnerJourney';
@@ -267,7 +266,6 @@ const Infographic = () => {
 
   return (
     <Container>
-      <SideButtons />
       <ContainerInfographic>
         {renderDynamicInfographic()}
         {renderOverview()}
